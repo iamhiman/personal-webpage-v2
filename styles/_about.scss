@@ -1,0 +1,125 @@
+.about {
+  padding: 80px 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+
+  &_left {
+    flex: 0 0 50%;
+    font-family: "Circular Std";
+
+    &_head {
+      letter-spacing: 1px;
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: #9c27b0;
+    }
+
+    &_text {
+      font-size: 22px;
+      color: #6b7688;
+    }
+
+    &_socialMedia {
+      margin-top: 40px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+
+    &_starme {
+      margin-top: 30px;
+      padding: 10px 6px;
+      color: #ffffff;
+      background-color: #001c55;
+      border: 1px solid #001c55;
+      border-radius: 6px;
+      text-align: center;
+      width: 200px;
+      cursor: pointer;
+    }
+  }
+
+  &_right {
+    flex: 0 0;
+
+    &_profilePic {
+      margin: 20px;
+      height: 320px;
+      width: 320px;
+      border: 1px solid transparent;
+      background-clip: content-box, border-box;
+      background-size: cover;
+      border-radius: 50% 10%;
+      background-image: url("../assets/profilePic.webp"),
+        linear-gradient(to bottom left, #edf2f8, #e2e6ec);
+      background-repeat: no-repeat;
+      padding: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    height: 100%;
+
+    &_left {
+      &_head {
+        font-size: 28px;
+      }
+
+      &_text {
+        font-size: 18px;
+      }
+    }
+
+    &_right {
+      &_profilePic {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about {
+    flex-direction: column-reverse;
+    padding: 50px 25px;
+
+    &_left {
+      text-align: center;
+
+      &_head {
+        font-size: 24px;
+      }
+
+      &_text {
+        font-size: 16px;
+      }
+
+      &_starme {
+        max-width: 200px;
+        margin: 30px auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .about {
+    &_right {
+      &_profilePic {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}
