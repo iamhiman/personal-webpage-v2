@@ -1,8 +1,17 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
+import { graphcms, QUERY } from "../services";
+import { ISkills, IJobs, IProjects } from "../typings";
 import { About } from "../components/About";
 
-const Home: NextPage = () => {
+interface IHomeProps {
+  jobs: IJobs[];
+  projects: IProjects[];
+  skills: ISkills[];
+}
+
+const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
+  console.log({ jobs, projects, skills });
   return (
     <div>
       <Head>
@@ -19,3 +28,16 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { skills, jobs, projects } = await graphcms.request(QUERY);
+
+  return {
+    props: {
+      skills,
+      jobs,
+      projects,
+    },
+    revalidate: 10,
+  };
+};
