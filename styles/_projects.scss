@@ -1,0 +1,114 @@
+.projects {
+  padding: 40px 25px;
+  font-family: "Circular Std";
+
+  &_heading {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &_filter {
+    &_box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+
+      &_item {
+        border: 1px solid #9c27b0;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: #edf2f8;
+      }
+
+      &_item:hover {
+        background-color: #9c27b0;
+        color: #ffffff;
+      }
+    }
+
+    &_cardsBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px 20px;
+
+      &_card {
+        width: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 1px solid #6b7688;
+        border-radius: 10px;
+        background-color: #edf2f8;
+        transition: all 0.3s;
+
+        &_img {
+          width: 200px;
+          height: 120px;
+        }
+
+        &_title {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          margin-top: 20px;
+        }
+
+        &_description {
+          font-size: 16px;
+          word-spacing: 1px;
+        }
+
+        &_techStack {
+          margin-bottom: 15px;
+
+          &_tech {
+            border: 1px solid #9c27b0;
+            border-radius: 5px;
+            display: inline-flex;
+            margin: 3px 5px 3px -1px;
+            font-size: 12px;
+            padding: 4px;
+            color: #9c27b0;
+            font-weight: 600;
+          }
+        }
+
+        &_links {
+          margin-top: 20px;
+          img {
+            width: 35px;
+            cursor: pointer;
+            transition: all 0.5s;
+          }
+
+          img:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      &_card:hover {
+        box-shadow: 0 2px 10px #6b7688;
+      }
+    }
+  }
+}
+
+.margin-right {
+  margin-right: 50px;
+}
+
+.activeTag {
+  background-color: #9c27b0;
+  color: #ffffff;
+}
