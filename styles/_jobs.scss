@@ -1,0 +1,104 @@
+.jobs {
+  background-color: #edf2f8;
+  padding: 40px 25px;
+  font-family: "Circular Std";
+
+  &_heading {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &_timeline_container {
+    max-width: 500px;
+    margin: 0 auto;
+    border-left: 3px solid #222;
+    padding-left: 32px;
+  }
+}
+
+.job {
+  box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.2);
+  padding: 25px 20px;
+  margin: 48px 0;
+  line-height: 2;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    color: #9c27b0;
+    font-size: 16px;
+  }
+
+  &_date_beforeLine {
+    position: absolute;
+    left: -125px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+  }
+
+  &_companyLogo {
+    width: 90px;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+  }
+
+  &_companyLinks {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    img {
+      width: 30px;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.job::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  position: absolute;
+  left: -45px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  transition: all 500ms;
+}
+
+.job:hover {
+  box-shadow: 0 2px 10px #9c27b0;
+}
+
+.job:hover::before {
+  background: #9c27b0;
+}
+
+@media only screen and (max-width: 720px) {
+  .jobs_timeline_container {
+    max-width: 100%;
+    margin-left: 8px;
+  }
+
+  .job_date_beforeLine {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .job_companyLinks {
+    position: static;
+    margin-top: 10px;
+  }
+}

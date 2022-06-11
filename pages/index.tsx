@@ -3,6 +3,7 @@ import Head from "next/head";
 import { graphcms, QUERY } from "../services";
 import { ISkills, IJobs, IProjects } from "../typings";
 import { About } from "../components/About";
+import { Jobs } from "../components/Jobs";
 
 interface IHomeProps {
   jobs: IJobs[];
@@ -11,7 +12,6 @@ interface IHomeProps {
 }
 
 const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
-  console.log({ jobs, projects, skills });
   return (
     <div>
       <Head>
@@ -22,6 +22,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
 
       <main>
         <About />
+        <Jobs jobs={jobs} />
       </main>
     </div>
   );
