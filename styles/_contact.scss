@@ -1,0 +1,89 @@
+.contact {
+  padding: 40px 25px;
+  font-family: "Circular Std";
+
+  &_heading {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &_email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: auto auto 30px auto;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #edf2f8;
+    word-break: break-all;
+    color: #9c27b0;
+    img {
+      width: 30px;
+      margin-right: 15px;
+    }
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+    padding: 0 20px;
+
+    &_formcontrol {
+      margin-top: 25px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &_label {
+        margin-bottom: 5px;
+        color: #6b7688;
+        font-size: 18px;
+        align-self: flex-start;
+      }
+
+      &_input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        outline: none;
+        margin-bottom: 5px;
+        background-color: #edf2f8;
+        border: 1px solid #6b7688;
+        border-radius: 8px;
+      }
+
+      &_error {
+        font-size: 14px;
+        font-weight: 500;
+        color: red;
+        align-self: flex-start;
+      }
+
+      &_submit {
+        text-align: center;
+        padding: 10px 30px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: #9c27b0;
+        color: #ffffff;
+        font-size: 18px;
+        cursor: pointer;
+        max-width: 120px;
+      }
+
+      &_submit:hover {
+        background-color: #871d9a;
+      }
+    }
+  }
+}

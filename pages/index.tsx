@@ -6,6 +6,7 @@ import { About } from "../components/About";
 import { Jobs } from "../components/Jobs";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
+import { Contact } from "../components/Contact";
 
 interface IHomeProps {
   jobs: IJobs[];
@@ -27,6 +28,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <Jobs jobs={jobs} />
         <Projects projects={projects} />
         <Skills skills={skills} />
+        <Contact />
       </main>
     </div>
   );
