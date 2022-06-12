@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Gmail from "../assets/gmail.webp";
 
 interface IFormValues {
@@ -22,6 +23,7 @@ export const Contact: NextPage = () => {
     email: false,
     message: false,
   });
+  const form = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -80,6 +82,21 @@ export const Contact: NextPage = () => {
     setErrors({ ...errors, ...obj });
 
     if (!objFlag.name && !objFlag.email && !objFlag.message) {
+      try {
+        const response = await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+          form.current!,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY!
+        );
+
+        if (response.status === 200) {
+          alert("Form submitted");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+
       setValues(values);
       console.log({ values });
     }
@@ -91,7 +108,7 @@ export const Contact: NextPage = () => {
       <div className="contact_email">
         <img src={Gmail.src} alt="" /> himanshu27@kashyap@gmail.com
       </div>
-      <form className="contact_form" autoComplete="off">
+      <form className="contact_form" autoComplete="off" ref={form}>
         <div className="contact_form_formcontrol">
           <label htmlFor="name" className="contact_form_formcontrol_label">
             Name :
