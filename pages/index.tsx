@@ -3,6 +3,7 @@ import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import { graphcms, QUERY } from "../services";
 import { ISkills, IJobs, IProjects } from "../typings";
+import { Navbar } from "../components/Navbar";
 import { About } from "../components/About";
 import { Jobs } from "../components/Jobs";
 import { Projects } from "../components/Projects";
@@ -25,6 +26,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
       </Head>
 
       <main>
+        <Navbar />
         <About />
         <Jobs jobs={jobs} />
         <Projects projects={projects} />
