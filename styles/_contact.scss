@@ -86,4 +86,26 @@
       }
     }
   }
+
+  &_form_submission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+    padding: 0 20px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+
+    &_head {
+      font-size: 22px;
+    }
+
+    &_text {
+      font-size: 18px;
+    }
+  }
 }

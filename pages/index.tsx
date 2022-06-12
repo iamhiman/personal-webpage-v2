@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
 import { graphcms, QUERY } from "../services";
 import { ISkills, IJobs, IProjects } from "../typings";
 import { About } from "../components/About";
@@ -29,6 +30,15 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <Projects projects={projects} />
         <Skills skills={skills} />
         <Contact />
+
+        <ToastContainer
+          position="top-right"
+          autoClose={3500}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+        />
       </main>
     </div>
   );

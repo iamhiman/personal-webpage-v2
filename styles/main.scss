@@ -21,6 +21,12 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --toastify-toast-width: 265px;
+  --toastify-toast-min-height: 80px;
+  --toastify-font-family: "Circular Std";
+}
+
 @import "./about";
 @import "./jobs";
 @import "./projects";
