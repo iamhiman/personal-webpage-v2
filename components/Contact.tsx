@@ -44,7 +44,7 @@ export const Contact: NextPage = () => {
       obj.name = "*Name cannot be empty !";
     } else if (values?.name.replace(/\s+/g, "").length <= 2) {
       objFlag.name = true;
-      obj.name = "*Name cannot be less than 2 characters !";
+      obj.name = "*Name cannot be less than 3 characters !";
     } else if (values?.name.replace(/\s+/g, "").length > 20) {
       objFlag.name = true;
       obj.name = "*Name cannot be greater than 20 characters !";
@@ -85,6 +85,7 @@ export const Contact: NextPage = () => {
     setErrors({ ...errors, ...obj });
 
     if (!objFlag.name && !objFlag.email && !objFlag.message) {
+      setValues({ name: "", email: "", message: "" });
       setLoading(true);
 
       try {
