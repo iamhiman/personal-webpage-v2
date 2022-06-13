@@ -1,6 +1,6 @@
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { graphcms, QUERY } from "../services";
 import { ISkills, IJobs, IProjects } from "../typings";
@@ -23,6 +23,19 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
+  const [theme, setTheme] = useState<string>("light");
+
+  useEffect(() => {
+    const data = localStorage.getItem("themeValue");
+    console.log({ data });
+    setTheme(data === "light" || !data ? "light" : "dark");
+  }, []);
+
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("themeValue", newTheme);
+    setTheme(newTheme);
+  };
 
   const handleNavItemClick = (item: string) => {
     let scrollObject = {};
@@ -77,8 +90,8 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Navbar onNavItemClick={handleNavItemClick} />
+      <main data-theme={theme}>
+        <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
 
         <section className="about">
           <About />

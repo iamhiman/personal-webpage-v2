@@ -5,6 +5,7 @@
   justify-content: space-around;
   align-items: center;
   height: 100%;
+  background-color: var(--about-background);
 
   &_left {
     flex: 0 0 50%;
@@ -19,7 +20,7 @@
 
     &_text {
       font-size: 22px;
-      color: #6b7688;
+      color: var(--about-left-text);
     }
 
     &_socialMedia {
@@ -59,7 +60,7 @@
       background-size: cover;
       border-radius: 50% 10%;
       background-image: url("../assets/profilePic.webp"),
-        linear-gradient(to bottom left, #edf2f8, #e2e6ec);
+        linear-gradient(to bottom left, var(--about-profilepic-one), var(--about-profilepic-two));
       background-repeat: no-repeat;
       padding: 12px;
     }

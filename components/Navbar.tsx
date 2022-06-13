@@ -1,11 +1,19 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import Moon from "../assets/moon.webp";
+import Sun from "../assets/sun.webp";
 
 interface INavbarProps {
   onNavItemClick: (item: string) => void;
+  switchTheme: () => void;
+  theme: string;
 }
 
-export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {} }) => {
+export const Navbar: NextPage<INavbarProps> = ({
+  onNavItemClick = () => {},
+  switchTheme = () => {},
+  theme,
+}) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -23,7 +31,10 @@ export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {} }) =>
           <div className={showSidebar ? "line line-3" : "line3"}></div>
         </div>
 
-        <p className="navbar_name">Himanshu</p>
+        <p className="navbar_name">
+          <span>Himanshu</span>
+          <img src={theme === "light" ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
+        </p>
         <div className="navbar_list">
           <p className="navbar_list_item" onClick={() => onNavItemClick("about")}>
             About

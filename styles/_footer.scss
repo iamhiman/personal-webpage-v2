@@ -1,5 +1,5 @@
 .footer {
-  background-color: #edf2f8;
+  background-color: var(--footer-background);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -7,8 +7,11 @@
   padding: 40px 20px;
   font-size: 20px;
   font-family: "Circular Std";
+  border-top: 1px solid var(--footer-border);
 
   &_copyright {
+    color: var(--footer-text);
+
     &_textOne {
       margin-bottom: 5px;
     }
@@ -28,6 +31,8 @@
 
   &_socialMedia {
     text-align: center;
+    color: var(--footer-text);
+
     &_links {
       margin-top: 20px;
       img {
