@@ -24,7 +24,7 @@ enum Months {
 
 export const Jobs: NextPage<IJobsProps> = ({ jobs }) => {
   return (
-    <section className="jobs">
+    <>
       <h1 className="jobs_heading">Work</h1>
 
       <div className="jobs_timeline_container">
@@ -53,6 +53,6 @@ export const Jobs: NextPage<IJobsProps> = ({ jobs }) => {
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
 };

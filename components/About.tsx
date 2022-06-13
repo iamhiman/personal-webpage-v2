@@ -6,7 +6,7 @@ import gmail from "../assets/gmail.webp";
 
 export const About: NextPage = () => {
   return (
-    <section className="about">
+    <>
       <div className="about_left">
         <h1 className="about_left_head">Hi, I&apos;m Himanshu Kashyap</h1>
         <p className="about_left_text">
@@ -25,6 +25,6 @@ export const About: NextPage = () => {
       <div className="about_right">
         <div className="about_right_profilePic" />
       </div>
-    </section>
+    </>
   );
 };

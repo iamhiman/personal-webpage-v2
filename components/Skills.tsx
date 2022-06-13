@@ -18,7 +18,7 @@ export const Skills: NextPage<ISKillsProps> = ({ skills }) => {
   const familiar = skills?.filter(skill => skill?.proficient === false);
 
   return (
-    <section className="skills">
+    <>
       <h1 className="skills_heading">Skills</h1>
       <div className="skills_box">
         <Skill skills={languages} skill="Languages" />
@@ -28,6 +28,6 @@ export const Skills: NextPage<ISKillsProps> = ({ skills }) => {
         <Skill skills={testing_tools} skill="Testing &amp; Tools" />
         <Skill skills={familiar} skill="Familiar" />
       </div>
-    </section>
+    </>
   );
 };

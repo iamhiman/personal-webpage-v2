@@ -28,7 +28,7 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
   }, [activeTag, projects]);
 
   return (
-    <section className="projects">
+    <>
       <h1 className="projects_heading">Projects</h1>
       <div className="projects_filter">
         <div className="projects_filter_box">
@@ -108,6 +108,6 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
           ))}
         </div>
       </div>
-    </section>
+    </>
   );
 };

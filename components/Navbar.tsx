@@ -1,7 +1,11 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 
-export const Navbar: NextPage = () => {
+interface INavbarProps {
+  onNavItemClick: (item: string) => void;
+}
+
+export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {} }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -21,20 +25,40 @@ export const Navbar: NextPage = () => {
 
         <p className="navbar_name">Himanshu</p>
         <div className="navbar_list">
-          <p className="navbar_list_item">About</p>
-          <p className="navbar_list_item">Work</p>
-          <p className="navbar_list_item">Projects</p>
-          <p className="navbar_list_item">Skills</p>
-          <p className="navbar_list_item">Contact</p>
+          <p className="navbar_list_item" onClick={() => onNavItemClick("about")}>
+            About
+          </p>
+          <p className="navbar_list_item" onClick={() => onNavItemClick("jobs")}>
+            Work
+          </p>
+          <p className="navbar_list_item" onClick={() => onNavItemClick("projects")}>
+            Projects
+          </p>
+          <p className="navbar_list_item" onClick={() => onNavItemClick("skills")}>
+            Skills
+          </p>
+          <p className="navbar_list_item" onClick={() => onNavItemClick("contact")}>
+            Contact
+          </p>
         </div>
       </nav>
 
       <div className={showSidebar ? "sidebar active" : "sidebar"}>
-        <p className="sidebar_item">About</p>
-        <p className="sidebar_item">Work</p>
-        <p className="sidebar_item">Projects</p>
-        <p className="sidebar_item">Skills</p>
-        <p className="sidebar_item">Contact</p>
+        <p className="sidebar_item" onClick={() => onNavItemClick("about")}>
+          About
+        </p>
+        <p className="sidebar_item" onClick={() => onNavItemClick("jobs")}>
+          Work
+        </p>
+        <p className="sidebar_item" onClick={() => onNavItemClick("projects")}>
+          Projects
+        </p>
+        <p className="sidebar_item" onClick={() => onNavItemClick("skills")}>
+          Skills
+        </p>
+        <p className="sidebar_item" onClick={() => onNavItemClick("contact")}>
+          Contact
+        </p>
       </div>
     </>
   );

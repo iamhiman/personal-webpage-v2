@@ -109,7 +109,7 @@ export const Contact: NextPage = () => {
   };
 
   return (
-    <section className="contact">
+    <>
       <h1 className="contact_heading">Contact Me</h1>
       <div className="contact_email">
         <img src={Gmail.src} alt="" /> himanshu27@kashyap@gmail.com
@@ -172,6 +172,6 @@ export const Contact: NextPage = () => {
           <div className="contact_form_submission_text">Please wait...</div>
         </div>
       )}
-    </section>
+    </>
   );
 };
