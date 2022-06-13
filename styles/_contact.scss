@@ -1,11 +1,13 @@
 .contact {
   padding: 40px 25px;
   font-family: "Circular Std";
+  background-color: var(--contact-background);
 
   &_heading {
     font-size: 42px;
     text-align: center;
     margin-bottom: 50px;
+    color: var(--contact-heading);
   }
 
   &_email {
@@ -16,7 +18,7 @@
     margin: auto auto 30px auto;
     padding: 15px;
     border-radius: 8px;
-    background-color: #edf2f8;
+    background-color: var(--contact-email-background);
     word-break: break-all;
     color: #9c27b0;
     img {
@@ -45,9 +47,9 @@
 
       &_label {
         margin-bottom: 5px;
-        color: #6b7688;
         font-size: 18px;
         align-self: flex-start;
+        color: var(--contact-label);
       }
 
       &_input {
@@ -56,9 +58,10 @@
         font-size: 16px;
         outline: none;
         margin-bottom: 5px;
-        background-color: #edf2f8;
+        background-color: var(--contact-input-background);
         border: 1px solid #6b7688;
         border-radius: 8px;
+        color: var(--contact-input-color);
       }
 
       &_error {

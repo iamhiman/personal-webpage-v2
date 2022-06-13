@@ -1,5 +1,5 @@
 .jobs {
-  background-color: #edf2f8;
+  background-color: var(--jobs-background);
   padding: 40px 25px;
   font-family: "Circular Std";
 
@@ -7,12 +7,13 @@
     font-size: 42px;
     text-align: center;
     margin-bottom: 20px;
+    color: var(--jobs-heading);
   }
 
   &_timeline_container {
     max-width: 500px;
     margin: 0 auto;
-    border-left: 3px solid #222;
+    border-left: 3px solid var(--jobs-timeline-border);
     padding-left: 32px;
   }
 }
@@ -23,7 +24,8 @@
   margin: 48px 0;
   line-height: 2;
   position: relative;
-  background-color: #ffffff;
+  background-color: var(--jobs-jobcard-background);
+  color: var(--jobs-jobcard-text);
   border-radius: 10px;
 
   h2 {

@@ -1,11 +1,13 @@
 .projects {
   padding: 40px 25px;
   font-family: "Circular Std";
+  background-color: var(--projects-background);
 
   &_heading {
     font-size: 42px;
     text-align: center;
     margin-bottom: 50px;
+    color: var(--projects-heading);
   }
 
   &_filter {
@@ -48,8 +50,9 @@
         padding: 15px;
         border: 1px solid #6b7688;
         border-radius: 10px;
-        background-color: #edf2f8;
+        background-color: var(--projects-card-background);
         transition: all 0.3s;
+        color: var(--projects-card-text);
 
         &_img {
           width: 200px;
@@ -89,6 +92,8 @@
             width: 35px;
             cursor: pointer;
             transition: all 0.5s;
+            border: 1px solid #6b7688;
+            border-radius: 50%;
           }
 
           img:hover {
