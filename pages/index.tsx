@@ -10,6 +10,7 @@ import { Jobs } from "../components/Jobs";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
+import { Footer } from "../components/Footer";
 
 interface IHomeProps {
   jobs: IJobs[];
@@ -98,6 +99,8 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <section className="contact" ref={contactRef}>
           <Contact />
         </section>
+
+        <Footer />
 
         <ToastContainer
           position="top-right"

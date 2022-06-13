@@ -15,12 +15,33 @@ export const About: NextPage = () => {
           2012.
         </p>
         <div className="about_left_socialMedia">
-          <img src={github.src} alt="" onClick={() => window.open("", "_blank")} />
-          <img src={linkedin.src} alt="" onClick={() => window.open("", "_blank")} />
-          <img src={instagram.src} alt="" onClick={() => window.open("", "_blank")} />
-          <img src={gmail.src} alt="" onClick={() => window.open("", "_blank")} />
+          <img
+            src={github.src}
+            alt=""
+            onClick={() => window.open("https://github.com/iamhiman", "_blank")}
+          />
+          <img
+            src={linkedin.src}
+            alt=""
+            onClick={() => window.open("https://www.linkedin.com/in/himankash/", "_blank")}
+          />
+          <img
+            src={instagram.src}
+            alt=""
+            onClick={() => window.open("https://www.instagram.com/himan_kash/", "_blank")}
+          />
+          <img
+            src={gmail.src}
+            alt=""
+            onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")}
+          />
         </div>
-        <div className="about_left_starme">⭐ Star Me On Github</div>
+        <div
+          className="about_left_starme"
+          onClick={() => window.open("https://github.com/iamhiman/personal-webpage-v2", "_blank")}
+        >
+          ⭐ Star Me On Github
+        </div>
       </div>
       <div className="about_right">
         <div className="about_right_profilePic" />

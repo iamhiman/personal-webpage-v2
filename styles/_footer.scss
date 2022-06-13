@@ -1,0 +1,52 @@
+.footer {
+  background-color: #edf2f8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  font-size: 20px;
+  font-family: "Circular Std";
+
+  &_copyright {
+    &_textOne {
+      margin-bottom: 5px;
+    }
+
+    &_textTwo {
+      margin-bottom: 5px;
+    }
+
+    &_textThree {
+      span {
+        color: #9c27b0;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &_socialMedia {
+    text-align: center;
+    &_links {
+      margin-top: 20px;
+      img {
+        width: 35px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+
+    &_socialMedia {
+      margin-top: 50px;
+    }
+  }
+}
