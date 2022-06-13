@@ -1,16 +1,11 @@
 .footer {
-  background-color: var(--footer-background);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 20px;
+  @include flexSettings(row, space-around, center);
+  @include sectionLayout(40px 20px, var(--background-one));
   font-size: 20px;
-  font-family: "Circular Std";
-  border-top: 1px solid var(--footer-border);
+  border-top: 2px solid var(--border-one);
 
   &_copyright {
-    color: var(--footer-text);
+    color: var(--text-color-one);
 
     &_textOne {
       margin-bottom: 5px;
@@ -35,8 +30,9 @@
 
     &_links {
       margin-top: 20px;
+
       img {
-        width: 35px;
+        @include imageSize(35px, 35px, contain);
         margin-right: 20px;
         cursor: pointer;
       }

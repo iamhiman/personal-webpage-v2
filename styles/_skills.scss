@@ -1,28 +1,17 @@
 .skills {
-  background-color: var(--skills-background);
-  padding: 40px 25px;
-  font-family: "Circular Std";
+  @include sectionLayout(40px 25px, var(--background-one));
 
   &_heading {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--skills-heading);
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
   }
 
   &_box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexSettings(column, center, center);
     flex-wrap: wrap;
+    width: 100%;
 
     &_container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include flexSettings(column, center, center);
       width: 100%;
       flex-wrap: wrap;
       margin-bottom: 40px;
@@ -30,7 +19,7 @@
       &_heading {
         font-size: 24px;
         font-weight: 400;
-        color: var(--skills-container-heading);
+        color: var(--main-text-color);
       }
 
       &_heading::after {
@@ -43,31 +32,24 @@
       }
 
       &_row {
-        display: flex;
+        @include flexSettings(row, center, center);
         width: 100%;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
 
         &_card {
+          @include flexSettings(column, center, center);
           width: 100px;
           height: 120px;
           text-align: center;
           margin: 10px;
           background-color: #ffffff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
           cursor: pointer;
           border-radius: 10px;
           transition: all 0.3s;
           border: 1px solid var(--skills-card-border);
 
           img {
-            width: 50px;
-            max-height: 50px;
-            object-fit: contain;
+            @include imageSize(50px, 50px, contain);
             margin-bottom: 10px;
           }
 

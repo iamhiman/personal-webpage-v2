@@ -1,67 +1,52 @@
 .contact {
-  padding: 40px 25px;
-  font-family: "Circular Std";
-  background-color: var(--contact-background);
+  @include sectionLayout(40px 25px, var(--background-two));
 
   &_heading {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--contact-heading);
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
   }
 
   &_email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexSettings(row, center, center);
+    @include sectionLayout(15px, var(--secondary-background-one));
     max-width: 400px;
     margin: auto auto 30px auto;
-    padding: 15px;
     border-radius: 8px;
-    background-color: var(--contact-email-background);
     word-break: break-all;
     color: #9c27b0;
     img {
-      width: 30px;
+      @include imageSize(30px, 30px, contain);
       margin-right: 15px;
     }
   }
 
   &_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexSettings(column, center, center);
     flex-wrap: wrap;
     max-width: 500px;
     margin: auto;
     padding: 0 20px;
 
     &_formcontrol {
+      @include flexSettings(column, center, center);
       margin-top: 25px;
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
 
       &_label {
         margin-bottom: 5px;
         font-size: 18px;
         align-self: flex-start;
-        color: var(--contact-label);
+        color: var(--text-color-two);
       }
 
       &_input {
+        @include sectionLayout(12px, var(--secondary-background-one));
         width: 100%;
-        padding: 12px;
         font-size: 16px;
         outline: none;
         margin-bottom: 5px;
-        background-color: var(--contact-input-background);
         border: 1px solid #6b7688;
         border-radius: 8px;
-        color: var(--contact-input-color);
+        color: var(--main-text-color);
       }
 
       &_error {
@@ -90,11 +75,9 @@
     }
   }
 
-  &_form_submission {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &_submission {
+    @include flexSettings(column, center, center);
+    color: var(--main-text-color);
     flex-wrap: wrap;
     max-width: 500px;
     margin: auto;

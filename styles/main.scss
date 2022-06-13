@@ -1,7 +1,13 @@
+@font-face {
+  font-family: Circular Std;
+  src: url("../assets/CircularStd-Book.otf");
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Circular Std";
 }
 
 html,
@@ -10,11 +16,6 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: Circular Std;
-  src: url("../assets/CircularStd-Book.otf");
 }
 
 a {
@@ -26,79 +27,58 @@ a {
   --toastify-toast-min-height: 80px;
   --toastify-font-family: "Circular Std";
 
-  --navbar-background: #edf2f8;
-  --navbar-border: #e2e6ec;
-
-  --about-background: #ffffff;
-  --about-left-text: #6b7688;
+  --background-one: #edf2f8;
+  --background-two: #ffffff;
+  --secondary-background-one: #edf2f8;
+  --main-text-color: #000000;
+  --text-color-one: #000000;
+  --text-color-two: #6b7688;
+  --border-one: #e2e6ec;
   --about-profilepic-one: #edf2f8;
   --about-profilepic-two: #e2e6ec;
-
-  --jobs-background: #edf2f8;
-  --jobs-heading: #000000;
-  --jobs-timeline-border: #222;
   --jobs-jobcard-background: #ffffff;
-  --jobs-jobcard-text: #000000;
-
-  --projects-background: #ffffff;
-  --projects-heading: #000000;
-  --projects-card-background: #edf2f8;
-  --projects-card-text: #000000;
-
-  --skills-background: #edf2f8;
-  --skills-heading: #000000;
-  --skills-container-heading: #000000;
   --skills-card-border: #ffffff;
   --skills-card-shadow: #6b7688;
-
-  --contact-background: #ffffff;
-  --contact-heading: #000000;
-  --contact-email-background: #edf2f8;
-  --contact-label: #6b7688;
-  --contact-input-background: #edf2f8;
-  --contact-input-color: #000000;
-
-  --footer-background: #edf2f8;
-  --footer-border: #e2e6ec;
-  --footer-text: #000000;
 }
 
 [data-theme="dark"] {
-  --navbar-background: #080808;
-  --navbar-border: #929397;
-
-  --about-background: #080808;
-  --about-left-text: #929397;
+  --background-one: #080808;
+  --background-two: #080808;
+  --secondary-background-one: #262626;
+  --main-text-color: #ffffff;
+  --text-color-one: #929397;
+  --text-color-two: #929397;
+  --border-one: #929397;
   --about-profilepic-one: #3a3a3a;
   --about-profilepic-two: #3a3a3a;
-
-  --jobs-background: #080808;
-  --jobs-heading: #ffffff;
-  --jobs-timeline-border: #ffffff;
   --jobs-jobcard-background: #191919;
-  --jobs-jobcard-text: #fff;
-
-  --projects-background: #080808;
-  --projects-heading: #ffffff;
-  --projects-card-background: #262626;
-  --projects-card-text: #929397;
-
-  --skills-background: #080808;
-  --skills-heading: #fff;
-  --skills-container-heading: #fff;
   --skills-card-border: #6b7688;
   --skills-card-shadow: #ffffff;
+}
 
-  --contact-background: #080808;
-  --contact-heading: #ffffff;
-  --contact-email-background: #262626;
-  --contact-label: #929397;
-  --contact-input-background: #262626;
-  --contact-input-color: #ffffff;
+@mixin imageSize($width, $height, $fit) {
+  width: $width;
+  height: $height;
+  object-fit: $fit;
+}
 
-  --footer-background: #080808;
-  --footer-border: #929397;
-  --footer-text: #929397;
+@mixin flexSettings($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin sectionLayout($padding, $background) {
+  background-color: $background;
+  padding: $padding;
+}
+
+@mixin headingLayout($fontSize, $textAlign, $marginBottom, $color) {
+  font-size: $fontSize;
+  text-align: $textAlign;
+  margin-bottom: $marginBottom;
+  color: $color;
 }
 
 @import "./navbar";

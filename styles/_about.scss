@@ -1,15 +1,10 @@
 .about {
-  padding: 80px 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  @include flexSettings(row, space-around, center);
+  @include sectionLayout(80px 25px, var(--background-two));
   height: 100%;
-  background-color: var(--about-background);
 
   &_left {
     flex: 0 0 50%;
-    font-family: "Circular Std";
 
     &_head {
       letter-spacing: 1px;
@@ -20,26 +15,23 @@
 
     &_text {
       font-size: 22px;
-      color: var(--about-left-text);
+      color: var(--text-color-two);
     }
 
     &_socialMedia {
       margin-top: 40px;
 
       img {
-        width: 40px;
-        height: 40px;
-        object-fit: contain;
+        @include imageSize(40px, 40px, contain);
         margin-right: 15px;
         cursor: pointer;
       }
     }
 
     &_starme {
+      @include sectionLayout(10px 6px, #001c55);
       margin-top: 30px;
-      padding: 10px 6px;
       color: #ffffff;
-      background-color: #001c55;
       border: 1px solid #001c55;
       border-radius: 6px;
       text-align: center;

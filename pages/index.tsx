@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { graphcms, QUERY } from "../services";
-import { ISkills, IJobs, IProjects } from "../typings";
+import { ISkills, IJobs, IProjects, Theme } from "../typings";
 import { Navbar } from "../components/Navbar";
 import { About } from "../components/About";
 import { Jobs } from "../components/Jobs";
@@ -23,11 +23,10 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const data = localStorage.getItem("themeValue");
-    console.log({ data });
     setTheme(data === "light" || !data ? "light" : "dark");
   }, []);
 
@@ -110,7 +109,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         </section>
 
         <section className="contact" ref={contactRef}>
-          <Contact />
+          <Contact theme={theme} />
         </section>
 
         <Footer />

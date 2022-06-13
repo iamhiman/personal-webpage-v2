@@ -1,36 +1,28 @@
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--navbar-background);
+  @include flexSettings(row, space-between, center);
+  background-color: var(--background-one);
   height: 80px;
   position: sticky;
   top: 0;
   z-index: 100;
-  font-family: "Circular Std";
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #9c27b0;
-  border-bottom: 2px solid var(--navbar-border);
+  border-bottom: 2px solid var(--border-one);
 
   &_name {
+    @include flexSettings(row, center, center);
     flex: 0 0 25%;
     font-size: 22px;
     margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     span {
       margin-right: 20px;
     }
 
     img {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
+      @include imageSize(45px, 45px, contain);
       border: 2px solid #9c27b0;
       border-radius: 50%;
       padding: 5px;
@@ -39,9 +31,7 @@
   }
 
   &_list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flexSettings(row, center, center);
     flex: 0 0 35%;
     margin-right: 15px;
 
@@ -170,12 +160,11 @@
   }
 
   .sidebar {
+    @include sectionLayout(20px, var(--background-one));
     display: block;
     height: calc(100vh - 80px);
     width: 250px;
-    background-color: var(--navbar-background);
-    box-shadow: 0 2px 10px var(--navbar-border);
-    border-right: 2px solid var(--navbar-border);
+    border-right: 2px solid var(--border-one);
     position: fixed;
     top: 80px;
     left: -100%;
@@ -194,7 +183,6 @@
       text-align: center;
       width: 200px;
       letter-spacing: 0.5px;
-      font-family: "Circular Std";
       font-weight: 700;
       text-transform: uppercase;
       color: #9c27b0;

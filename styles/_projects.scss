@@ -1,26 +1,19 @@
 .projects {
-  padding: 40px 25px;
-  font-family: "Circular Std";
-  background-color: var(--projects-background);
+  @include sectionLayout(40px 25px, var(--background-two));
 
   &_heading {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--projects-heading);
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
   }
 
   &_filter {
     &_box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexSettings(row, center, center);
       flex-wrap: wrap;
       margin-bottom: 50px;
 
       &_item {
+        @include sectionLayout(8px 16px, #edf2f8);
         border: 1px solid #9c27b0;
-        padding: 8px 16px;
         border-radius: 8px;
         margin-right: 15px;
         margin-bottom: 10px;
@@ -28,7 +21,6 @@
         text-align: center;
         font-weight: 700;
         cursor: pointer;
-        background-color: #edf2f8;
       }
 
       &_item:hover {
@@ -38,25 +30,21 @@
     }
 
     &_cardsBox {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+      @include flexSettings(row, center, normal);
       flex-wrap: wrap;
       gap: 30px 20px;
 
       &_card {
+        @include sectionLayout(15px, var(--secondary-background-one));
         width: 250px;
         text-align: center;
-        padding: 15px;
         border: 1px solid #6b7688;
         border-radius: 10px;
-        background-color: var(--projects-card-background);
         transition: all 0.3s;
-        color: var(--projects-card-text);
+        color: var(--text-color-one);
 
         &_img {
-          width: 200px;
-          height: 120px;
+          @include imageSize(200px, 120px, fill);
         }
 
         &_title {
@@ -89,7 +77,7 @@
         &_links {
           margin-top: 20px;
           img {
-            width: 35px;
+            @include imageSize(35px, 35px, contain);
             cursor: pointer;
             transition: all 0.5s;
             border: 1px solid #6b7688;
