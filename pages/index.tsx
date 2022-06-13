@@ -23,11 +23,12 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  const [theme, setTheme] = useState<string>("");
+  const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
     const data = localStorage.getItem("themeValue");
-    setTheme(data === "light" ? "light" : "dark");
+    console.log({ data });
+    setTheme(data === "light" || !data ? "light" : "dark");
   }, []);
 
   const switchTheme = () => {
