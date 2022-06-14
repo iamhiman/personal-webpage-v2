@@ -11,6 +11,7 @@ import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
+import ScrollUp from "../assets/scrollup.webp";
 
 interface IHomeProps {
   jobs: IJobs[];
@@ -24,16 +25,38 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
   const [theme, setTheme] = useState<Theme>("light");
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const data = localStorage.getItem("themeValue");
     setTheme(data === "light" || !data ? "light" : "dark");
   }, []);
 
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     localStorage.setItem("themeValue", newTheme);
     setTheme(newTheme);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleNavItemClick = (item: string) => {
@@ -121,6 +144,8 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         </section>
 
         <Footer />
+
+        {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
 
         <ToastContainer
           position="top-right"

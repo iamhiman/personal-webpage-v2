@@ -57,12 +57,11 @@
       }
 
       &_submit {
+        @include sectionLayout(10px 30px, #9c27b0);
         text-align: center;
-        padding: 10px 30px;
         border-radius: 10px;
         border: none;
         outline: none;
-        background-color: #9c27b0;
         color: #ffffff;
         font-size: 18px;
         cursor: pointer;
@@ -80,10 +79,8 @@
     color: var(--main-text-color);
     flex-wrap: wrap;
     max-width: 500px;
-    margin: auto;
+    margin: 150px auto 100px auto;
     padding: 0 20px;
-    margin-top: 150px;
-    margin-bottom: 100px;
     text-align: center;
 
     &_head {

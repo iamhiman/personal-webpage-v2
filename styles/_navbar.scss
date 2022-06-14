@@ -22,7 +22,7 @@
     }
 
     img {
-      @include imageSize(45px, 45px, contain);
+      @include imageSize(40px, 40px, contain);
       border: 2px solid #9c27b0;
       border-radius: 50%;
       padding: 5px;
@@ -53,8 +53,8 @@
 }
 
 .menu {
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 25px;
   position: relative;
   left: 25px;
   display: none;
@@ -65,8 +65,8 @@
   background-color: #9c27b0;
   border-radius: 4px;
   transition: 0.5s all ease-in-out;
-  width: 40px;
-  height: 5px;
+  width: 35px;
+  height: 4px;
 }
 
 .line-1 {
@@ -88,8 +88,8 @@
   background-color: #9c27b0;
   border-radius: 4px;
   transition: 0.5s all ease-in-out;
-  width: 40px;
-  height: 5px;
+  width: 35px;
+  height: 4px;
   top: 0;
 }
 
@@ -98,8 +98,8 @@
   background-color: #9c27b0;
   border-radius: 4px;
   transition: 0.5s all ease-in-out;
-  width: 40px;
-  height: 5px;
+  width: 35px;
+  height: 4px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -109,8 +109,8 @@
   background-color: #9c27b0;
   border-radius: 4px;
   transition: 0.5s all ease-in-out;
-  width: 40px;
-  height: 5px;
+  width: 35px;
+  height: 4px;
   top: 100%;
   transform: translateY(-100%);
 }
@@ -120,8 +120,8 @@
   z-index: 1;
   opacity: 0;
   cursor: pointer;
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 25px;
 }
 
 .check:checked ~ .line-1 {
