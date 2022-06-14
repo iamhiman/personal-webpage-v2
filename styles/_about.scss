@@ -30,10 +30,9 @@
 
     &_starme {
       @include sectionLayout(10px 6px, #001c55);
+      @include borderWithRadius(1px solid #001c55, 6px);
       margin-top: 30px;
       color: #ffffff;
-      border: 1px solid #001c55;
-      border-radius: 6px;
       text-align: center;
       width: 200px;
       cursor: pointer;
@@ -44,13 +43,12 @@
     flex: 0 0;
 
     &_profilePic {
+      @include borderWithRadius(1px solid transparent, 50% 10%);
       margin: 20px;
       height: 320px;
       width: 320px;
-      border: 1px solid transparent;
       background-clip: content-box, border-box;
       background-size: cover;
-      border-radius: 50% 10%;
       background-image: url("../assets/profilePic.webp"),
         linear-gradient(to bottom left, var(--about-profilepic-one), var(--about-profilepic-two));
       background-repeat: no-repeat;

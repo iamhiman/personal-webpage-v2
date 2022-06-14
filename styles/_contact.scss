@@ -40,12 +40,11 @@
 
       &_input {
         @include sectionLayout(12px, var(--secondary-background-one));
+        @include borderWithRadius(1px solid #6b7688, 8px);
         width: 100%;
         font-size: 16px;
         outline: none;
         margin-bottom: 5px;
-        border: 1px solid #6b7688;
-        border-radius: 8px;
         color: var(--main-text-color);
       }
 
@@ -58,9 +57,8 @@
 
       &_submit {
         @include sectionLayout(10px 30px, #9c27b0);
+        @include borderWithRadius(none, 10px);
         text-align: center;
-        border-radius: 10px;
-        border: none;
         outline: none;
         color: #ffffff;
         font-size: 18px;

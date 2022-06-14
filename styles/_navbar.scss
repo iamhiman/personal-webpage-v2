@@ -1,6 +1,6 @@
 .navbar {
   @include flexSettings(row, space-between, center);
-  background-color: var(--background-one);
+  @include colorWithBackground(#9c27b0, var(--background-one));
   height: 80px;
   position: sticky;
   top: 0;
@@ -8,7 +8,6 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #9c27b0;
   border-bottom: 2px solid var(--border-one);
 
   &_name {
@@ -23,8 +22,7 @@
 
     img {
       @include imageSize(40px, 40px, contain);
-      border: 2px solid #9c27b0;
-      border-radius: 50%;
+      @include borderWithRadius(2px solid #9c27b0, 50%);
       padding: 5px;
       cursor: pointer;
     }
@@ -37,7 +35,7 @@
 
     &_item {
       margin-right: 15px;
-      font-size: 15px;
+      font-size: 17px;
       padding: 8px 14px;
       border-radius: 16px;
       cursor: pointer;
@@ -45,8 +43,7 @@
     }
 
     &_item:hover {
-      color: #ffffff;
-      background-color: #9c27b0;
+      @include colorWithBackground(#ffffff, #9c27b0);
       box-shadow: 0 2px 10px #9c27b0;
     }
   }
@@ -70,49 +67,27 @@
 }
 
 .line-1 {
-  top: 0;
+  @include lineTransform(0, none);
 }
 
 .line-2 {
-  top: 50%;
-  transform: translateY(-50%);
+  @include lineTransform(50%, translateY(-50%));
 }
 
 .line-3 {
-  top: 100%;
-  transform: translateY(-100%);
+  @include lineTransform(100%, translateY(-100%));
 }
 
 .line1 {
-  position: absolute;
-  background-color: #9c27b0;
-  border-radius: 4px;
-  transition: 0.5s all ease-in-out;
-  width: 35px;
-  height: 4px;
-  top: 0;
+  @include lineTransform(0, none);
 }
 
 .line2 {
-  position: absolute;
-  background-color: #9c27b0;
-  border-radius: 4px;
-  transition: 0.5s all ease-in-out;
-  width: 35px;
-  height: 4px;
-  top: 50%;
-  transform: translateY(-50%);
+  @include lineTransform(50%, translateY(-50%));
 }
 
 .line3 {
-  position: absolute;
-  background-color: #9c27b0;
-  border-radius: 4px;
-  transition: 0.5s all ease-in-out;
-  width: 35px;
-  height: 4px;
-  top: 100%;
-  transform: translateY(-100%);
+  @include lineTransform(100%, translateY(-100%));
 }
 
 .check {
@@ -125,8 +100,7 @@
 }
 
 .check:checked ~ .line-1 {
-  top: 50%;
-  transform: translate(0, -50%) rotate(45deg);
+  @include lineTransform(50%, translate(0, -50%) rotate(45deg));
 }
 
 .check:checked ~ .line-2 {
@@ -135,8 +109,7 @@
 }
 
 .check:checked ~ .line-3 {
-  top: 50%;
-  transform: translate(0, -50%) rotate(-45deg);
+  @include lineTransform(50%, translate(0, -50%) rotate(-45deg));
 }
 
 .sidebar {
@@ -173,24 +146,20 @@
     transition: 1.5s;
 
     &_item {
-      font-size: 18px;
+      @include headingLayout(18px, center, 25px, #9c27b0);
       padding: 8px 14px;
       border-radius: 16px;
       cursor: pointer;
       transition: all 0.7s ease-in-out;
-      margin-bottom: 25px;
       margin-top: 25px;
-      text-align: center;
       width: 200px;
       letter-spacing: 0.5px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #9c27b0;
     }
 
     &_item:hover {
-      color: #ffffff;
-      background-color: #9c27b0;
+      @include colorWithBackground(#ffffff, #9c27b0);
       box-shadow: 0 2px 10px #9c27b0;
     }
   }

@@ -13,8 +13,7 @@
 
       &_item {
         @include sectionLayout(8px 16px, #edf2f8);
-        border: 1px solid #9c27b0;
-        border-radius: 8px;
+        @include borderWithRadius(1px solid #9c27b0, 8px);
         margin-right: 15px;
         margin-bottom: 10px;
         font-size: 14px;
@@ -24,8 +23,7 @@
       }
 
       &_item:hover {
-        background-color: #9c27b0;
-        color: #ffffff;
+        @include colorWithBackground(#ffffff, #9c27b0);
       }
     }
 
@@ -36,10 +34,9 @@
 
       &_card {
         @include sectionLayout(15px, var(--secondary-background-one));
+        @include borderWithRadius(1px solid #6b7688, 10px);
         width: 250px;
         text-align: center;
-        border: 1px solid #6b7688;
-        border-radius: 10px;
         transition: all 0.3s;
         color: var(--text-color-one);
 
@@ -63,8 +60,7 @@
           margin-bottom: 15px;
 
           &_tech {
-            border: 1px solid #9c27b0;
-            border-radius: 5px;
+            @include borderWithRadius(1px solid #9c27b0, 5px);
             display: inline-flex;
             margin: 3px 5px 3px -1px;
             font-size: 12px;
@@ -78,10 +74,9 @@
           margin-top: 20px;
           img {
             @include imageSize(35px, 35px, contain);
+            @include borderWithRadius(1px solid #6b7688, 50%);
             cursor: pointer;
             transition: all 0.5s;
-            border: 1px solid #6b7688;
-            border-radius: 50%;
           }
 
           img:hover {
@@ -102,6 +97,5 @@
 }
 
 .activeTag {
-  background-color: #9c27b0;
-  color: #ffffff;
+  @include colorWithBackground(#ffffff, #9c27b0);
 }

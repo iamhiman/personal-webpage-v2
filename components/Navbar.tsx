@@ -26,9 +26,9 @@ export const Navbar: NextPage<INavbarProps> = ({
             onChange={() => setShowSidebar(!showSidebar)}
             checked={showSidebar}
           />
-          <div className={showSidebar ? "line line-1" : "line1"}></div>
-          <div className={showSidebar ? "line line-2" : "line2"}></div>
-          <div className={showSidebar ? "line line-3" : "line3"}></div>
+          <div className={showSidebar ? "line line-1" : "line line1"}></div>
+          <div className={showSidebar ? "line line-2" : "line line2"}></div>
+          <div className={showSidebar ? "line line-3" : "line line3"}></div>
         </div>
 
         <p className="navbar_name">

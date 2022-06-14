@@ -38,15 +38,14 @@
 
         &_card {
           @include flexSettings(column, center, center);
+          @include borderWithRadius(1px solid var(--skills-card-border), 10px);
           width: 100px;
           height: 120px;
           text-align: center;
           margin: 10px;
           background-color: #ffffff;
           cursor: pointer;
-          border-radius: 10px;
           transition: all 0.3s;
-          border: 1px solid var(--skills-card-border);
 
           img {
             @include imageSize(50px, 50px, contain);

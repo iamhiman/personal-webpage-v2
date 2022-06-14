@@ -60,13 +60,12 @@
 }
 
 .job::before {
+  @include borderWithRadius(2px solid #000, 50%);
   content: "";
   width: 20px;
   height: 20px;
-  border: 2px solid #000;
   position: absolute;
   left: -45px;
-  border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
   background: #fff;
