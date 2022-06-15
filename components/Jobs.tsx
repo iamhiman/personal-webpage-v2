@@ -1,25 +1,10 @@
 import type { NextPage } from "next";
-import { IJobs } from "../typings";
+import { IJobs, Months } from "../typings";
 import linkedin from "../assets/linkedin.webp";
 import www from "../assets/www.webp";
 
 interface IJobsProps {
   jobs: IJobs[];
-}
-
-enum Months {
-  Jan = 1,
-  Feb = 2,
-  Mar = 3,
-  Apr = 4,
-  May = 5,
-  Jun = 6,
-  Jul = 7,
-  Aug = 8,
-  Sep = 9,
-  Oct = 10,
-  Nov = 11,
-  Dec = 12,
 }
 
 export const Jobs: NextPage<IJobsProps> = ({ jobs }) => {

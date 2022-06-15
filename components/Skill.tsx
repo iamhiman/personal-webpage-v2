@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { ISkills } from "../typings";
-import styles from "./Skills.module.scss";
 
 interface ISkillProps {
   skills: ISkills[];
