@@ -3,6 +3,7 @@
   @include sectionLayout(40px 20px, var(--background-one));
   font-size: 20px;
   border-top: 2px solid var(--border-one);
+  color: var(--main-text-color);
 
   &_copyright {
     color: var(--text-color-one);
@@ -26,7 +27,6 @@
 
   &_socialMedia {
     text-align: center;
-    color: var(--footer-text);
 
     &_links {
       margin-top: 20px;
