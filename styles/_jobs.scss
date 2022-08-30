@@ -40,7 +40,7 @@
   }
 
   &_companyLogo {
-    @include imageSize(90px, auto, contain);
+    @include imageSize(90px, 40px, contain);
     position: absolute;
     right: 10px;
     top: 30px;
