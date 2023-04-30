@@ -32,7 +32,6 @@ export const Navbar: NextPage<INavbarProps> = ({
         </div>
 
         <p className="navbar_name">
-          <span>Himanshu</span>
           <img src={theme === "light" ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
         </p>
         <div className="navbar_list">

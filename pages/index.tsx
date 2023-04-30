@@ -107,16 +107,16 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   return (
     <div>
       <Head>
-        <title>Himanshu Kashyap</title>
+        <title>Alekei Bukhalov</title>
         <meta
           name="keywords"
-          content="himan_kash, himanshu, kashyap, himanshu kashyap, iamhiman, lpu, dehradun, software developer, web developer"
+          content="aleksei, bukhalov, aleksei bukhalov, alex, qa, devops, linux"
         />
         <meta
           name="description"
-          content="Hey, I'm Himanshu Kashyap a Software Developer from Dehradun, Uttarakhand. Here's my portfolio where you can see all my projects, blogs, and achievements."
+          content="Hi, my name is Alekei, and this is my personal site creating and maintaining which I study linux, nginx, docker, and some other web and DevOps - related stuff. I have about 4 years of experience as a QA Automation Engineer"
         />
-        <meta name="author" content="Himanshu Kashyap" />
+        <meta name="author" content="Alekei Bukhalov" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
