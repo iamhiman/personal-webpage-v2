@@ -8,11 +8,8 @@ export const Footer: NextPage = () => {
   return (
     <footer className="footer">
       <div className="footer_copyright">
-        <p className="footer_copyright_textOne">No &copy; copyright issues.</p>
-        <p className="footer_copyright_textTwo">Feel free to copy.</p>
         <p className="footer_copyright_textThree">
-          Link to previous
-          <span onClick={() => window.open("http://himankash.epizy.com/", "_blank")}> version</span>
+          <span onClick={() => window.open("https://github.com/iamhiman/personal-webpage-v2", "_blank")}> Original website project here</span>
         </p>
       </div>
       <div className="footer_socialMedia">
@@ -21,22 +18,22 @@ export const Footer: NextPage = () => {
           <img
             src={Github.src}
             alt=""
-            onClick={() => window.open("https://github.com/iamhiman", "_blank")}
+            onClick={() => window.open("https://github.com/liqlos", "_blank")}
           />
           <img
             src={Linkedin.src}
             alt=""
-            onClick={() => window.open("https://www.linkedin.com/in/himankash/", "_blank")}
+            onClick={() => window.open("https://www.linkedin.com/in/abukhalov/", "_blank")}
           />
           <img
             src={Instagram.src}
             alt=""
-            onClick={() => window.open("https://www.instagram.com/himan_kash/", "_blank")}
+            onClick={() => window.open("https://www.instagram.com/ala.la/", "_blank")}
           />
           <img
             src={Gmail.src}
             alt=""
-            onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")}
+            onClick={() => window.open("mailto:alex@bukhalov.com", "_blank")}
           />
         </div>
       </div>

@@ -24,7 +24,7 @@ export const About: NextPage = () => {
           <img
             src={linkedin.src}
             alt=""
-            onClick={() => window.open("https://www.linkedin.com/in/alekseybukhalov/", "_blank")}
+            onClick={() => window.open("https://www.linkedin.com/in/abukhalov/", "_blank")}
           />
           <img
             src={instagram.src}
