@@ -1,4 +1,4 @@
-<h1 align="center">😄 Personal Portfolio Website V2</h1>
+<h1 align="center">Personal website</h1>
 
 <p align="center">
 	<img src="https://img.shields.io/badge/Platform-Web%2C%20Mobile-brightgreen" alt="Platform-Web">
@@ -7,5 +7,5 @@
 
 <br>
 <h2 align="center">Built with Next Js & TypeScript at core.</h2>
-<h2 align="center"><a href="https://himankash.com"> Live Site </a></h2>
+<h4 align="center"><a href="https://github.com/iamhiman/personal-webpage-v2"> Forked from iamhiman/personal-webpage-v2</a></h4>
 
