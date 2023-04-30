@@ -127,21 +127,21 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
           <About />
         </section>
 
-        <section className="jobs" ref={jobsRef}>
-          <Jobs jobs={jobs} />
-        </section>
+        {/*<section className="jobs" ref={jobsRef}>*/}
+        {/*  <Jobs jobs={jobs} />*/}
+        {/*</section>*/}
 
-        <section className="projects" ref={projectsRef}>
-          <Projects projects={projects} />
-        </section>
+        {/*<section className="projects" ref={projectsRef}>*/}
+        {/*  <Projects projects={projects} />*/}
+        {/*</section>*/}
 
-        <section className="skills" ref={skillsRef}>
-          <Skills skills={skills} />
-        </section>
+        {/*<section className="skills" ref={skillsRef}>*/}
+        {/*  <Skills skills={skills} />*/}
+        {/*</section>*/}
 
-        <section className="contact" ref={contactRef}>
-          <Contact theme={theme} />
-        </section>
+        {/*<section className="contact" ref={contactRef}>*/}
+        {/*  <Contact theme={theme} />*/}
+        {/*</section>*/}
 
         <Footer />
 

@@ -34,23 +34,23 @@ export const Navbar: NextPage<INavbarProps> = ({
         <p className="navbar_name">
           <img src={theme === "light" ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
         </p>
-        <div className="navbar_list">
-          <p className="navbar_list_item" onClick={() => onNavItemClick("about")}>
-            About
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("jobs")}>
-            Work
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("projects")}>
-            Projects
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("skills")}>
-            Skills
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("contact")}>
-            Contact
-          </p>
-        </div>
+        {/*<div className="navbar_list">*/}
+        {/*  <p className="navbar_list_item" onClick={() => onNavItemClick("about")}>*/}
+        {/*    About*/}
+        {/*  </p>*/}
+        {/*  <p className="navbar_list_item" onClick={() => onNavItemClick("jobs")}>*/}
+        {/*    Work*/}
+        {/*  </p>*/}
+        {/*  <p className="navbar_list_item" onClick={() => onNavItemClick("projects")}>*/}
+        {/*    Projects*/}
+        {/*  </p>*/}
+        {/*  <p className="navbar_list_item" onClick={() => onNavItemClick("skills")}>*/}
+        {/*    Skills*/}
+        {/*  </p>*/}
+        {/*  <p className="navbar_list_item" onClick={() => onNavItemClick("contact")}>*/}
+        {/*    Contact*/}
+        {/*  </p>*/}
+        {/*</div>*/}
       </nav>
 
       <div className={showSidebar ? "sidebar active" : "sidebar"}>
