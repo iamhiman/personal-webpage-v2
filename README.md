@@ -26,3 +26,10 @@ install needed soft:(npm install next react react-dom)(?)
 
 
 
+--refactor dockerfile to multistage build
+
+
+docker build -t liqlos/personal-webpage:1 .
+docker push liqlos/personal-webpage:1 
+
+
