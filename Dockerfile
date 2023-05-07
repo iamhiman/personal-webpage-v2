@@ -1,18 +1,31 @@
+FROM node:17.9.1-alpine3.15 AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+
+#RUN npm install --omit=dev
+RUN npm install
+
+COPY . .
+
+RUN npx next build
+
 FROM node:17.9.1-alpine3.15
 
 WORKDIR /app
 
 RUN addgroup -g 1001 -S nextjs && adduser -S nextjs -u 1001 nextjs
 
-COPY package*.json ./
+COPY --from=builder /app/.next ./.next
 
-RUN npm install --production
+COPY --from=builder /app/package.json ./
 
-COPY . .
+COPY --from=builder /app/node_modules ./node_modules
+
+RUN chown -R nextjs:nextjs ./.next
 
 USER nextjs
-
-RUN npx next build
 
 EXPOSE 3000
 
