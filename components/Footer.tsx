@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Github from "../assets/github.webp";
 import Linkedin from "../assets/linkedin.webp";
-import Instagram from "../assets/instagram.webp";
 import Gmail from "../assets/gmail.webp";
 
 export const Footer: NextPage = () => {
@@ -24,11 +23,6 @@ export const Footer: NextPage = () => {
             src={Linkedin.src}
             alt=""
             onClick={() => window.open("https://www.linkedin.com/in/abukhalov/", "_blank")}
-          />
-          <img
-            src={Instagram.src}
-            alt=""
-            onClick={() => window.open("https://www.instagram.com/ala.la/", "_blank")}
           />
           <img
             src={Gmail.src}
