@@ -39,7 +39,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: docker stop ${{ env.CONTAINER_NAME }} ||
-            docker rm ${{ env.CONTAINER_NAME }} ||
-            docker rm ${{ env.CONTAINER_NAME }} ||
+            docker rm /${{ env.CONTAINER_NAME }} ||
             docker pull ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}} &&
             docker run -d --net=host --restart always --name ${{ env.CONTAINER_NAME}} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}}
