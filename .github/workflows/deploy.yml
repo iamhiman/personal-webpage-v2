@@ -40,11 +40,6 @@ jobs:
           port: 22
           script: docker stop ${{ env.CONTAINER_NAME }} ||
             docker rm ${{ env.CONTAINER_NAME }} ||
-            #docker container prune -f ||
             docker rm ${{ env.CONTAINER_NAME }} ||
-            #docker rmi -f $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG ||
             docker pull ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}} &&
-            docker run -d -p 3000:3000 --restart always --name ${{ env.CONTAINER_NAME}} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}}
-    
-    
-    
+            docker run -d --net=host --restart always --name ${{ env.CONTAINER_NAME}} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}}
