@@ -2,12 +2,10 @@ FROM node:17.9.1-alpine3.15 AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY . .
 
 #RUN npm install --omit=dev
 RUN npm install
-
-COPY . .
 
 RUN npx next build
 
@@ -18,8 +16,6 @@ WORKDIR /app
 RUN addgroup -g 1001 -S nextjs && adduser -S nextjs -u 1001 nextjs
 
 COPY --from=builder /app/.next ./.next
-
-COPY --from=builder /app/package.json ./
 
 COPY --from=builder /app/node_modules ./node_modules
 
