@@ -1,4 +1,4 @@
-name: my page CI
+name: deploy
 
 on:
   push:
@@ -38,7 +38,8 @@ jobs:
           username: ${{ secrets.SERVER_USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          script: docker stop ${{ env.CONTAINER_NAME }} ||
-            docker rm /${{ env.CONTAINER_NAME }} ||
+          script: cd my-personal-page &&
+            docker-compose down &&
+            docker image prune -f &&
             docker pull ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}} &&
-            docker run -d --net=host --restart always --name ${{ env.CONTAINER_NAME}} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_IMAGE_NAME}}:${{ env.DOCKER_IMAGE_TAG}}
+            docker-compose up -d
