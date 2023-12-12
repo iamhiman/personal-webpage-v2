@@ -78,9 +78,9 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
     if (values?.message?.trim().length === 0) {
       objFlag.message = true;
       obj.message = "*Message cannot be empty !";
-    } else if (values?.message.length > 200) {
+    } else if (values?.message.length > 600) {
       objFlag.message = true;
-      obj.message = "*Please write a short message(Max 200 Characters) !";
+      obj.message = "*Please write a short message(Max 600 Characters) !";
     } else {
       objFlag.message = false;
       obj.message = "";
@@ -103,7 +103,7 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
 
         if (response.status === 200) {
           setLoading(false);
-          toast.success("Form Submitted !");
+          toast.success("Message Sent !");
         }
       } catch (err) {
         console.log(err);
@@ -154,6 +154,7 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
               Message :
             </label>
             <textarea
+              rows={10}
               className="contact_form_formcontrol_input"
               id="message"
               name="message"
