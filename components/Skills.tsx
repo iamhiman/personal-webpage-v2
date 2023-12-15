@@ -25,7 +25,7 @@ export const Skills: NextPage<ISKillsProps> = ({ skills }) => {
         <Skill skills={frontend} skill="Frontend" />
         <Skill skills={uilibraries} skill="UI Libraries" />
         <Skill skills={headlessCms} skill="Headless CMS" />
-        <Skill skills={testing_tools} skill="Testing &amp; Tools" />
+        <Skill skills={testing_tools} skill="Testing &amp; Other Tools" />
         <Skill skills={familiar} skill="Familiar" />
       </div>
     </>
