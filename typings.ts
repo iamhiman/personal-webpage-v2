@@ -38,6 +38,21 @@ export interface IProjects {
   image: IUrl;
 }
 
+export interface IFormFields {
+  value: string;
+  errorMessage: string;
+}
+export interface IFormData {
+  name: IFormFields;
+  email: IFormFields;
+  message: IFormFields;
+}
+
+export const THEME = {
+  LIGHT: "light",
+  DARK: "dark",
+};
+
 export type Theme = "light" | "dark";
 
 export enum Months {
@@ -54,3 +69,29 @@ export enum Months {
   Nov = 11,
   Dec = 12,
 }
+
+export const SKILLSET = {
+  LANGUAGES: "languages",
+  FRONTEND: "frontend",
+  UI_LIBRARIES: "uilibraries",
+  HEADLESS_CMS: "headless cms",
+  TESTING: "testing",
+  TOOLS: "tools",
+};
+
+export const TECHSTACK = {
+  ALL: "all",
+  CPP: "c++",
+  PHP: "php",
+  JAVASCRIPT: "javascript",
+  TYPESCRIPT: "typescript",
+  REACT: "react",
+};
+
+export const SECTION = {
+  ABOUT: "about",
+  JOBS: "jobs",
+  PROJECTS: "projects",
+  SKILLS: "skills",
+  CONTACT: "contact",
+};

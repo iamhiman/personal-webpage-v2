@@ -18,11 +18,7 @@ export const Footer: NextPage = () => {
       <div className="footer_socialMedia">
         <p>Connect with me !</p>
         <div className="footer_socialMedia_links">
-          <img
-            src={Github.src}
-            alt=""
-            onClick={() => window.open("https://github.com/iamhiman", "_blank")}
-          />
+          <img src={Github.src} alt="" onClick={() => window.open("https://github.com/iamhiman", "_blank")} />
           <img
             src={Linkedin.src}
             alt=""
@@ -33,11 +29,7 @@ export const Footer: NextPage = () => {
             alt=""
             onClick={() => window.open("https://www.instagram.com/himan_kash/", "_blank")}
           />
-          <img
-            src={Gmail.src}
-            alt=""
-            onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")}
-          />
+          <img src={Gmail.src} alt="" onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")} />
         </div>
       </div>
     </footer>

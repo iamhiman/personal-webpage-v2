@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { apolloClient, QUERY } from "../apolloclient";
-import { ISkills, IJobs, IProjects, Theme } from "../typings";
+import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../typings";
 import { Navbar } from "../components/Navbar";
 import { About } from "../components/About";
 import { Jobs } from "../components/Jobs";
@@ -24,12 +24,12 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<string>(THEME.LIGHT);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    const data = localStorage.getItem("themeValue");
-    setTheme(data === "light" || !data ? "light" : "dark");
+    const theme = localStorage.getItem("themeValue");
+    setTheme(theme === THEME.LIGHT || !theme ? THEME.LIGHT : THEME.DARK);
   }, []);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   }, []);
 
   const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+    const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
     localStorage.setItem("themeValue", newTheme);
     setTheme(newTheme);
   };
@@ -62,35 +62,35 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   const handleNavItemClick = (item: string) => {
     let scrollObject = {};
     switch (item) {
-      case "about":
+      case SECTION.ABOUT:
         scrollObject = {
           top: 0,
           behavior: "smooth",
         };
         break;
 
-      case "jobs":
+      case SECTION.JOBS:
         scrollObject = {
           top: jobsRef.current?.offsetTop! - 70,
           behavior: "smooth",
         };
         break;
 
-      case "projects":
+      case SECTION.PROJECTS:
         scrollObject = {
           top: projectsRef.current?.offsetTop! - 70,
           behavior: "smooth",
         };
         break;
 
-      case "skills":
+      case SECTION.SKILLS:
         scrollObject = {
           top: skillsRef.current?.offsetTop! - 70,
           behavior: "smooth",
         };
         break;
 
-      case "contact":
+      case SECTION.CONTACT:
         scrollObject = {
           top: contactRef.current?.offsetTop! - 70,
           behavior: "smooth",
@@ -123,24 +123,24 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
       <main data-theme={theme}>
         <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
 
-        <section className="about">
+        <section className={SECTION.ABOUT}>
           <About />
         </section>
 
-        <section className="jobs" ref={jobsRef}>
+        <section className={SECTION.JOBS} ref={jobsRef}>
           <Jobs jobs={jobs} />
         </section>
 
-        <section className="projects" ref={projectsRef}>
+        <section className={SECTION.PROJECTS} ref={projectsRef}>
           <Projects projects={projects} />
         </section>
 
-        <section className="skills" ref={skillsRef}>
+        <section className={SECTION.SKILLS} ref={skillsRef}>
           <Skills skills={skills} />
         </section>
 
         <section className="contact" ref={contactRef}>
-          <Contact theme={theme} />
+          <Contact theme={theme as Theme} />
         </section>
 
         <Footer />

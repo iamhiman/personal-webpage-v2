@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import Moon from "../assets/moon.webp";
 import Sun from "../assets/sun.webp";
+import { SECTION, THEME } from "../typings";
 
 interface INavbarProps {
   onNavItemClick: (item: string) => void;
@@ -9,12 +10,8 @@ interface INavbarProps {
   theme: string;
 }
 
-export const Navbar: NextPage<INavbarProps> = ({
-  onNavItemClick = () => {},
-  switchTheme = () => {},
-  theme,
-}) => {
-  const [showSidebar, setShowSidebar] = useState(false);
+export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, switchTheme = () => {}, theme }) => {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
   return (
     <>
@@ -33,41 +30,41 @@ export const Navbar: NextPage<INavbarProps> = ({
 
         <p className="navbar_name">
           <span>Himanshu</span>
-          <img src={theme === "light" ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
+          <img src={theme === THEME.LIGHT ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
         </p>
         <div className="navbar_list">
-          <p className="navbar_list_item" onClick={() => onNavItemClick("about")}>
+          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.ABOUT)}>
             About
           </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("jobs")}>
+          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.JOBS)}>
             Work
           </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("projects")}>
+          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.PROJECTS)}>
             Projects
           </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("skills")}>
+          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.SKILLS)}>
             Skills
           </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick("contact")}>
+          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.CONTACT)}>
             Contact
           </p>
         </div>
       </nav>
 
       <div className={showSidebar ? "sidebar active" : "sidebar"}>
-        <p className="sidebar_item" onClick={() => onNavItemClick("about")}>
+        <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.ABOUT)}>
           About
         </p>
-        <p className="sidebar_item" onClick={() => onNavItemClick("jobs")}>
+        <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.JOBS)}>
           Work
         </p>
-        <p className="sidebar_item" onClick={() => onNavItemClick("projects")}>
+        <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.PROJECTS)}>
           Projects
         </p>
-        <p className="sidebar_item" onClick={() => onNavItemClick("skills")}>
+        <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.SKILLS)}>
           Skills
         </p>
-        <p className="sidebar_item" onClick={() => onNavItemClick("contact")}>
+        <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.CONTACT)}>
           Contact
         </p>
       </div>

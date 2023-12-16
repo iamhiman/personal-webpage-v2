@@ -23,16 +23,10 @@ export const Jobs: NextPage<IJobsProps> = ({ jobs }) => {
             </div>
             <div className="job_date">
               {`${Months[parseInt(job?.from?.split("-")[1])]}, ${job?.from?.split("-")[0]}`} -{" "}
-              {job?.to
-                ? `${Months[parseInt(job?.to?.split("-")[1])]}, ${job?.to?.split("-")[0]}`
-                : "Present"}
+              {job?.to ? `${Months[parseInt(job?.to?.split("-")[1])]}, ${job?.to?.split("-")[0]}` : "Present"}
             </div>
             <div className="job_companyLinks">
-              <img
-                src={linkedin?.src}
-                alt=""
-                onClick={() => window.open(job?.companyLinkedin, "_blank")}
-              />
+              <img src={linkedin?.src} alt="" onClick={() => window.open(job?.companyLinkedin, "_blank")} />
               <img src={www?.src} alt="" onClick={() => window.open(job?.companyUrl, "_blank")} />
             </div>
           </div>

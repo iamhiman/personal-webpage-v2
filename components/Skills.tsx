@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ISkills } from "../typings";
+import { ISkills, SKILLSET } from "../typings";
 import { Skill } from "./Skill";
 
 interface ISKillsProps {
@@ -7,13 +7,12 @@ interface ISKillsProps {
 }
 
 export const Skills: NextPage<ISKillsProps> = ({ skills }) => {
-  const languages = skills?.filter(skill => skill?.fieldType?.toLowerCase() === "languages");
-  const frontend = skills?.filter(skill => skill?.fieldType?.toLowerCase() === "frontend");
-  const uilibraries = skills?.filter(skill => skill?.fieldType?.toLowerCase() === "uilibraries");
-  const headlessCms = skills?.filter(skill => skill?.fieldType?.toLowerCase() === "headless cms");
+  const languages = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.LANGUAGES);
+  const frontend = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.FRONTEND);
+  const uilibraries = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.UI_LIBRARIES);
+  const headlessCms = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.HEADLESS_CMS);
   const testing_tools = skills?.filter(
-    skill =>
-      skill?.fieldType?.toLowerCase() === "testing" || skill?.fieldType?.toLowerCase() === "tools"
+    skill => skill?.fieldType?.toLowerCase() === SKILLSET.TESTING || skill?.fieldType?.toLowerCase() === SKILLSET.TOOLS
   );
   const familiar = skills?.filter(skill => skill?.proficient === false);
 

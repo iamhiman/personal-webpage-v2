@@ -4,17 +4,7 @@ import emailjs from "@emailjs/browser";
 import { ThreeDots } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import Gmail from "../assets/gmail.webp";
-import { Theme } from "../typings";
-
-interface IFormFields {
-  value: string;
-  errorMessage: string;
-}
-interface IFormData {
-  name: IFormFields;
-  email: IFormFields;
-  message: IFormFields;
-}
+import { IFormData, THEME, Theme } from "../typings";
 
 interface IContactProps {
   theme: Theme;
@@ -170,10 +160,7 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
       ) : (
         <div className="contact_submission">
           <div className="contact_submission_head">Submitting Form Details</div>
-          <ThreeDots
-            ariaLabel="loading-indicator"
-            color={theme === "light" ? "#343e47" : "#ffffff"}
-          />
+          <ThreeDots ariaLabel="loading-indicator" color={theme === THEME.LIGHT ? "#343e47" : "#ffffff"} />
           <div className="contact_submission_text">Please wait...</div>
         </div>
       )}

@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { IProjects } from "../typings";
+import { IProjects, TECHSTACK } from "../typings";
 import Github from "../assets/github.webp";
 import Web from "../assets/www.webp";
 import { useEffect, useState } from "react";
@@ -9,20 +9,17 @@ interface IProjectsProps {
 }
 
 export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
-  const [activeTag, setActiveTag] = useState<string>("all");
+  const [activeTag, setActiveTag] = useState<string>(TECHSTACK.ALL);
   const [filteredProjects, setFilteredProjects] = useState<IProjects[]>([]);
 
   useEffect(() => {
-    if (activeTag === "all") {
+    if (activeTag === TECHSTACK.ALL) {
       setFilteredProjects(projects);
       return;
     }
 
     const filtered = projects?.filter(
-      project =>
-        project?.techStack?.some(
-          tech => tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase())
-        )
+      project => project?.techStack?.some(tech => tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase()))
     );
 
     setFilteredProjects(filtered);
@@ -34,38 +31,38 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
       <div className="projects_filter">
         <div className="projects_filter_box">
           <div
-            onClick={() => setActiveTag("all")}
-            className={`projects_filter_box_item ${activeTag === "all" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.ALL)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.ALL ? "activeTag" : ""}`}
           >
             All
           </div>
           <div
-            onClick={() => setActiveTag("react")}
-            className={`projects_filter_box_item ${activeTag === "react" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.REACT)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.REACT ? "activeTag" : ""}`}
           >
             React
           </div>
           <div
-            onClick={() => setActiveTag("typescript")}
-            className={`projects_filter_box_item ${activeTag === "typescript" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.TYPESCRIPT)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.TYPESCRIPT ? "activeTag" : ""}`}
           >
             TypeScript
           </div>
           <div
-            onClick={() => setActiveTag("javascript")}
-            className={`projects_filter_box_item ${activeTag === "javascript" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.JAVASCRIPT)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.JAVASCRIPT ? "activeTag" : ""}`}
           >
             JavaScript
           </div>
           <div
-            onClick={() => setActiveTag("php")}
-            className={`projects_filter_box_item ${activeTag === "php" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.PHP)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.PHP ? "activeTag" : ""}`}
           >
             PHP
           </div>
           <div
-            onClick={() => setActiveTag("c++")}
-            className={`projects_filter_box_item ${activeTag === "c++" ? "activeTag" : ""}`}
+            onClick={() => setActiveTag(TECHSTACK.CPP)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.CPP ? "activeTag" : ""}`}
           >
             C++
           </div>
@@ -77,12 +74,9 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
               <p className="projects_filter_cardsBox_card_title">{project?.title}</p>
               <div className="projects_filter_cardsBox_card_techStack">
                 {project?.techStack?.map(stack => {
-                  if (stack?.text?.toLowerCase() !== "all") {
+                  if (stack?.text?.toLowerCase() !== TECHSTACK.ALL) {
                     return (
-                      <span
-                        key={stack?.text}
-                        className="projects_filter_cardsBox_card_techStack_tech"
-                      >
+                      <span key={stack?.text} className="projects_filter_cardsBox_card_techStack_tech">
                         {stack?.text}
                       </span>
                     );
@@ -98,11 +92,7 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
                   className={`${project?.demoLink && "margin-right"}`}
                 />
                 {project?.demoLink && (
-                  <img
-                    src={Web.src}
-                    alt=""
-                    onClick={() => window.open(project?.demoLink, "_blank")}
-                  />
+                  <img src={Web.src} alt="" onClick={() => window.open(project?.demoLink, "_blank")} />
                 )}
               </div>
             </div>
