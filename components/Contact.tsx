@@ -6,16 +6,14 @@ import { toast } from "react-toastify";
 import Gmail from "../assets/gmail.webp";
 import { Theme } from "../typings";
 
-interface IFormValues {
-  name: string;
-  email: string;
-  message: string;
+interface IFormFields {
+  value: string;
+  errorMessage: string;
 }
-
-interface IFormErrorValues {
-  name: boolean;
-  email: boolean;
-  message: boolean;
+interface IFormData {
+  name: IFormFields;
+  email: IFormFields;
+  message: IFormFields;
 }
 
 interface IContactProps {
@@ -23,74 +21,68 @@ interface IContactProps {
 }
 
 export const Contact: NextPage<IContactProps> = ({ theme }) => {
-  const [values, setValues] = useState<IFormValues>({ name: "", email: "", message: "" });
-  const [errors, setErrors] = useState<IFormValues>({ name: "", email: "", message: "" });
-  const [errorsFlag, setErrorsFlag] = useState<IFormErrorValues>({
-    name: false,
-    email: false,
-    message: false,
+  const [formData, setFormData] = useState<IFormData>({
+    name: { value: "", errorMessage: "" },
+    email: { value: "", errorMessage: "" },
+    message: { value: "", errorMessage: "" },
   });
   const [loading, setLoading] = useState<boolean>(false);
   const form = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: { value: e.target.value, errorMessage: "" } });
   };
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const objFlag = { name: false, email: false, message: false };
     const obj = { name: "", email: "", message: "" };
     const lettersregex = /^[a-zA-Z ]*$/;
     const mailregex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
 
-    if (values?.name?.trim().length === 0) {
-      objFlag.name = true;
+    if (formData?.name?.value?.trim().length === 0) {
       obj.name = "*Name cannot be empty !";
-    } else if (values?.name.replace(/\s+/g, "").length <= 2) {
-      objFlag.name = true;
+    } else if (formData?.name?.value?.replace(/\s+/g, "").length <= 2) {
       obj.name = "*Name cannot be less than 3 characters !";
-    } else if (values?.name.replace(/\s+/g, "").length > 20) {
-      objFlag.name = true;
-      obj.name = "*Name cannot be greater than 20 characters !";
-    } else if (!values?.name.match(lettersregex)) {
-      objFlag.name = true;
+    } else if (formData?.name?.value?.replace(/\s+/g, "").length > 25) {
+      obj.name = "*Name cannot be greater than 25 characters !";
+    } else if (!formData?.name?.value?.match(lettersregex)) {
       obj.name = "*Name can only contain alphabets";
     } else {
-      objFlag.name = false;
       obj.name = "";
     }
 
-    if (values?.email?.trim().length === 0) {
-      objFlag.email = true;
+    if (formData?.email?.value?.trim().length === 0) {
       obj.email = "*Email cannot be empty !";
-    } else if (values?.email.length > 40) {
-      objFlag.email = true;
+    } else if (formData?.email?.value?.length > 40) {
       obj.email = "*Email should be less than 40 characters !";
-    } else if (!values?.email.match(mailregex)) {
-      objFlag.email = true;
+    } else if (!formData?.email?.value?.match(mailregex)) {
       obj.email = "*Please enter valid Email !";
     } else {
-      objFlag.email = false;
       obj.email = "";
     }
 
-    if (values?.message?.trim().length === 0) {
-      objFlag.message = true;
+    if (formData?.message?.value?.trim().length === 0) {
       obj.message = "*Message cannot be empty !";
-    } else if (values?.message.length > 600) {
-      objFlag.message = true;
+    } else if (formData?.message?.value?.length > 600) {
       obj.message = "*Please write a short message(Max 600 Characters) !";
     } else {
-      objFlag.message = false;
       obj.message = "";
     }
 
-    setErrorsFlag(errorsFlag => ({ ...errorsFlag, ...objFlag }));
-    setErrors({ ...errors, ...obj });
+    const tempFormData = {
+      name: { value: formData.name.value, errorMessage: obj.name },
+      email: { value: formData.email.value, errorMessage: obj.email },
+      message: { value: formData.message.value, errorMessage: obj.message },
+    };
 
-    if (!objFlag.name && !objFlag.email && !objFlag.message) {
-      setValues({ name: "", email: "", message: "" });
+    setFormData({ ...tempFormData });
+
+    if (!obj.name && !obj.email && !obj.message) {
+      setFormData({
+        name: { value: "", errorMessage: "" },
+        email: { value: "", errorMessage: "" },
+        message: { value: "", errorMessage: "" },
+      });
       setLoading(true);
 
       try {
@@ -130,10 +122,12 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
               id="name"
               name="name"
               type="text"
-              value={values?.name ?? ""}
+              value={formData?.name?.value ?? ""}
               onChange={handleChange}
             />
-            <p className="contact_form_formcontrol_error">{errorsFlag?.name && errors?.name}</p>
+            <p className="contact_form_formcontrol_error">
+              {!!formData?.name?.errorMessage && formData?.name?.errorMessage}
+            </p>
           </div>
           <div className="contact_form_formcontrol">
             <label htmlFor="email" className="contact_form_formcontrol_label">
@@ -144,10 +138,12 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
               id="email"
               name="email"
               type="email"
-              value={values?.email ?? ""}
+              value={formData?.email?.value ?? ""}
               onChange={handleChange}
             />
-            <p className="contact_form_formcontrol_error">{errorsFlag?.email && errors?.email}</p>
+            <p className="contact_form_formcontrol_error">
+              {!!formData?.email?.errorMessage && formData?.email?.errorMessage}
+            </p>
           </div>
           <div className="contact_form_formcontrol">
             <label htmlFor="message" className="contact_form_formcontrol_label">
@@ -158,11 +154,11 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
               className="contact_form_formcontrol_input"
               id="message"
               name="message"
-              value={values?.message ?? ""}
+              value={formData?.message?.value ?? ""}
               onChange={handleChange}
             />
             <p className="contact_form_formcontrol_error">
-              {errorsFlag?.message && errors?.message}
+              {!!formData?.message?.errorMessage && formData?.message?.errorMessage}
             </p>
           </div>
           <div className="contact_form_formcontrol">
