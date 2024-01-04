@@ -86,6 +86,7 @@ export const TECHSTACK = {
   JAVASCRIPT: "javascript",
   TYPESCRIPT: "typescript",
   REACT: "react",
+  NEXTJS: "nextjs",
 };
 
 export const SECTION = {

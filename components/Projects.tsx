@@ -27,7 +27,7 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
 
   return (
     <>
-      <h1 className="projects_heading">Projects</h1>
+      <h1 className="projects_heading">Personal Projects</h1>
       <div className="projects_filter">
         <div className="projects_filter_box">
           <div
@@ -35,6 +35,12 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
             className={`projects_filter_box_item ${activeTag === TECHSTACK.ALL ? "activeTag" : ""}`}
           >
             All
+          </div>
+          <div
+            onClick={() => setActiveTag(TECHSTACK.NEXTJS)}
+            className={`projects_filter_box_item ${activeTag === TECHSTACK.NEXTJS ? "activeTag" : ""}`}
+          >
+            NextJS
           </div>
           <div
             onClick={() => setActiveTag(TECHSTACK.REACT)}
