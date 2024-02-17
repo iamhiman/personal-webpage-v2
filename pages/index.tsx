@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { apolloClient, QUERY } from "../apolloclient";
+import { api, QUERY } from "../services";
 import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../typings";
 import { Navbar } from "../components/Navbar";
 import { About } from "../components/About";
@@ -163,7 +163,7 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { error, loading, data } = await apolloClient.query({ query: QUERY });
+  const { error, loading, data } = await api.query({ query: QUERY });
   const { skills, jobs, projects } = data;
 
   return {
