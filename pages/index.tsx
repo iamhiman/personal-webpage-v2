@@ -130,14 +130,14 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
 
         {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
 
-        <ToastContainer
-          position="top-right"
-          autoClose={3500}
-          hideProgressBar={false}
-          closeOnClick={true}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-        />
+        {/*<ToastContainer*/}
+        {/*  position="top-right"*/}
+        {/*  autoClose={3500}*/}
+        {/*  hideProgressBar={false}*/}
+        {/*  closeOnClick={true}*/}
+        {/*  pauseOnFocusLoss={false}*/}
+        {/*  pauseOnHover={false}*/}
+        {/*/>*/}
       </main>
     </div>
   );
