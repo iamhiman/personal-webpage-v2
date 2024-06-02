@@ -6,12 +6,12 @@ import gmail from "../assets/gmail.webp";
 export const About: NextPage = () => {
   return (
     <>
+      
       <div className="about_left">
-        <h1 className="about_left_head">Hi! My name is Aleksei Bukhalov</h1>
+        <h1 className="about_left_head">Hi! I am Aleksei</h1>
         <p className="about_left_text">
           This is my personal page.<br></br>
-          While creating and maintaining this site, I am trying and learning some technologies
-          such as linux, nginx, docker, and some other web and DevOps - related stuff.<br></br>
+          I use it for practicing and playing with some interesting technologies. <br></br>
           I have about 4 years of experience as a QA Automation Engineer.
         </p>
         <div className="about_left_socialMedia">

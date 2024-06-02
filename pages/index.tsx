@@ -110,11 +110,11 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <title>Aleksei Bukhalov</title>
         <meta
           name="keywords"
-          content="aleksei, bukhalov, aleksei bukhalov, alex, qa, devops, linux"
+          content="aleksei, bukhalov, aleksei bukhalov, alex, qa, linux"
         />
         <meta
           name="description"
-          content="Hi, my name is Aleksei, and this is my personal site creating and maintaining which I study linux, nginx, docker, and some other web and DevOps - related stuff. I have about 4 years of experience as a QA Automation Engineer"
+          content="Hi, I am Aleksei, and this is my personal page which I use for practicing and playing with some interesting technologies. I have about 4 years of experience as a QA Automation Engineer"
         />
         <meta name="author" content="Aleksei Bukhalov" />
         <link rel="icon" href="/favicon.ico" />
@@ -126,23 +126,6 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
         <section className="about">
           <About />
         </section>
-
-        {/*<section className="jobs" ref={jobsRef}>*/}
-        {/*  <Jobs jobs={jobs} />*/}
-        {/*</section>*/}
-
-        {/*<section className="projects" ref={projectsRef}>*/}
-        {/*  <Projects projects={projects} />*/}
-        {/*</section>*/}
-
-        {/*<section className="skills" ref={skillsRef}>*/}
-        {/*  <Skills skills={skills} />*/}
-        {/*</section>*/}
-
-        {/*<section className="contact" ref={contactRef}>*/}
-        {/*  <Contact theme={theme} />*/}
-        {/*</section>*/}
-
         <Footer />
 
         {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
