@@ -10,10 +10,6 @@ export const Footer: NextPage = () => {
       <div className="footer_copyright">
         <p className="footer_copyright_textOne">No &copy; copyright issues.</p>
         <p className="footer_copyright_textTwo">Feel free to copy.</p>
-        <p className="footer_copyright_textThree">
-          Link to previous
-          <span onClick={() => window.open("http://himankash.epizy.com/", "_blank")}> version</span>
-        </p>
       </div>
       <div className="footer_socialMedia">
         <p>Connect with me !</p>

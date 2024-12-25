@@ -97,7 +97,7 @@ a {
 }
 
 .scroll-up {
-  @include imageSize(45px, 45px, contain);
+  @include imageSize(40px, 40px, contain);
   @include borderWithRadius(2px solid #9c27b0, 50%);
   padding: 8px;
   position: fixed;
