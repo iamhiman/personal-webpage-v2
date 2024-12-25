@@ -10,9 +10,10 @@ export const About: NextPage = () => {
       <div className="about_left">
         <h1 className="about_left_head">Hi, I&apos;m Himanshu Kashyap</h1>
         <p className="about_left_text">
-          Hi! I am Himanshu Kashyap from Dehradun, Uttarakhand. I am Computer Science Engineering Graduate with minors
-          in Cyber Security. I am passionate about writing clean, efficient and optimized code. I wrote my First Program
-          in C++ in 2012.
+          I am a Software Engineer (Fullstack) from Dehradun, Uttarakhand - India. I am experienced in writing scalable
+          code & building fault-tolerant systems from scratch. I have done my graduation in Computer Science Engineering
+          with minors in Cyber Security. I am passionate about writing clean, efficient and optimized code. I wrote my
+          First Program in C++ in 2012.
         </p>
         <div className="about_left_socialMedia">
           <img src={github.src} alt="" onClick={() => window.open("https://github.com/iamhiman", "_blank")} />

@@ -74,6 +74,8 @@ export const SKILLSET = {
   LANGUAGES: "languages",
   FRONTEND: "frontend",
   UI_LIBRARIES: "uilibraries",
+  BACKEND: "backend",
+  DATABASE: "database",
   HEADLESS_CMS: "headless cms",
   TESTING: "testing",
   TOOLS: "tools",
