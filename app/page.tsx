@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { api, QUERY } from "../services";
@@ -53,48 +52,30 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleNavItemClick = (item: string) => {
     let scrollObject = {};
     switch (item) {
       case SECTION.ABOUT:
-        scrollObject = {
-          top: 0,
-          behavior: "smooth",
-        };
+        scrollObject = { top: 0, behavior: "smooth" };
         break;
 
       case SECTION.JOBS:
-        scrollObject = {
-          top: jobsRef.current?.offsetTop! - 70,
-          behavior: "smooth",
-        };
+        scrollObject = { top: jobsRef.current?.offsetTop! - 70, behavior: "smooth" };
         break;
 
       case SECTION.PROJECTS:
-        scrollObject = {
-          top: projectsRef.current?.offsetTop! - 70,
-          behavior: "smooth",
-        };
+        scrollObject = { top: projectsRef.current?.offsetTop! - 70, behavior: "smooth" };
         break;
 
       case SECTION.SKILLS:
-        scrollObject = {
-          top: skillsRef.current?.offsetTop! - 70,
-          behavior: "smooth",
-        };
+        scrollObject = { top: skillsRef.current?.offsetTop! - 70, behavior: "smooth" };
         break;
 
       case SECTION.CONTACT:
-        scrollObject = {
-          top: contactRef.current?.offsetTop! - 70,
-          behavior: "smooth",
-        };
+        scrollObject = { top: contactRef.current?.offsetTop! - 70, behavior: "smooth" };
         break;
 
       default:
@@ -106,20 +87,6 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
 
   return (
     <div>
-      <Head>
-        <title>Himanshu Kashyap</title>
-        <meta
-          name="keywords"
-          content="himan_kash, himanshu, kashyap, himanshu kashyap, iamhiman, lpu, dehradun, software developer, web developer"
-        />
-        <meta
-          name="description"
-          content="Hey, I'm Himanshu Kashyap a Software Developer from Dehradun, Uttarakhand. Here's my portfolio where you can see all my projects, blogs, and achievements."
-        />
-        <meta name="author" content="Himanshu Kashyap" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main data-theme={theme}>
         <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
 
@@ -166,12 +133,5 @@ export const getStaticProps: GetStaticProps = async () => {
   const { error, loading, data } = await api.query({ query: QUERY });
   const { skills, jobs, projects } = data;
 
-  return {
-    props: {
-      skills,
-      jobs,
-      projects,
-    },
-    revalidate: 10,
-  };
+  return { props: { skills, jobs, projects }, revalidate: 10 };
 };
