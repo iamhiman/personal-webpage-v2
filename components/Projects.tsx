@@ -18,8 +18,8 @@ export const Projects: NextPage<IProjectsProps> = ({ projects }) => {
       return;
     }
 
-    const filtered = projects?.filter(
-      project => project?.techStack?.some(tech => tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase()))
+    const filtered = projects?.filter(project =>
+      project?.techStack?.some(tech => tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase()))
     );
 
     setFilteredProjects(filtered);
