@@ -1,0 +1,62 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.project-card {
+  @include sectionLayout(15px, var(--secondary-background-one));
+  @include borderWithRadius(1px solid #6b7688, 10px);
+  width: 250px;
+  text-align: center;
+  color: var(--text-color-one);
+  transition: all 0.5s ease-in-out;
+
+  img {
+    @include imageSize(200px, 120px, fill);
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  &-description {
+    font-size: 16px;
+    word-spacing: 1px;
+  }
+
+  &-techStack {
+    margin-bottom: 15px;
+
+    &-tech {
+      @include borderWithRadius(1px solid #9c27b0, 5px);
+      display: inline-flex;
+      margin: 3px 5px 3px -1px;
+      font-size: 12px;
+      padding: 4px;
+      color: #9c27b0;
+      font-weight: 600;
+    }
+  }
+
+  &-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+      @include imageSize(35px, 35px, contain);
+      @include borderWithRadius(1px solid #6b7688, 50%);
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.project-card:hover {
+  box-shadow: 0 2px 10px #6b7688;
+}

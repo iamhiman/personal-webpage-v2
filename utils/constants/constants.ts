@@ -28,14 +28,14 @@ export const SKILLSET = {
   TOOLS: "tools",
 };
 
-export const TECHSTACK = {
-  ALL: "all",
-  CPP: "c++",
-  PHP: "php",
-  JAVASCRIPT: "javascript",
-  TYPESCRIPT: "typescript",
-  REACT: "react",
-  NEXTJS: "nextjs",
+export const TechStack = {
+  All: "All",
+  React: "React",
+  NextJs: "NextJs",
+  JavaScript: "JavaScript",
+  TypeScript: "TypeScript",
+  Php: "PHP",
+  Cpp: "C++",
 };
 
 export const SECTION = { ABOUT: "about", JOBS: "jobs", PROJECTS: "projects", SKILLS: "skills", CONTACT: "contact" };

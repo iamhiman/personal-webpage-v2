@@ -67,3 +67,11 @@ export interface IHomePageLayoutProps {
   error: ApolloError | undefined;
   loading: boolean | undefined;
 }
+
+export interface IProjectsSectionProps {
+  projects: IProjects[];
+}
+
+export interface IProjectCardProps {
+  project: IProjects;
+}

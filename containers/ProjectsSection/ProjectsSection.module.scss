@@ -1,0 +1,41 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.projects {
+  @include sectionLayout(40px 25px, var(--background-two));
+
+  &-heading {
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
+  }
+
+  &-filter {
+    @include flexSettings(row, center, center);
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    &-item {
+      @include sectionLayout(8px 16px, #edf2f8);
+      @include borderWithRadius(1px solid #9c27b0, 8px);
+      margin-right: 15px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.5 ease-in-out;
+    }
+
+    .active-tag {
+      @include colorWithBackground(#ffffff, #9c27b0);
+    }
+
+    &-item:hover {
+      @include colorWithBackground(#ffffff, #9c27b0);
+    }
+  }
+
+  &-cards {
+    @include flexSettings(row, center, normal);
+    flex-wrap: wrap;
+    gap: 30px 20px;
+  }
+}

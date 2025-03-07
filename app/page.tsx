@@ -3,23 +3,11 @@ import type { NextPage } from "next";
 import { HomePageLayout } from "@/layouts";
 import client, { QUERY } from "@/utils/lib/apolloClient";
 
-// interface IHomeProps {
-//   jobs: IJobs[];
-//   projects: IProjects[];
-//   skills: ISkills[];
-// }
-
 const Home: NextPage = async () => {
   const { data, error, loading } = await client.query({
     query: QUERY,
     context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
-
-  console.log(data);
-
-  //const { skills, jobs, projects } = data;
-
-  // console.log(skills, jobs, projects);
 
   // useEffect(() => {
   //   const toggleVisibility = () => {
