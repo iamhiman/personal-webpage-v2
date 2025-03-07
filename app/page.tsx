@@ -15,7 +15,7 @@ const Home: NextPage = async () => {
     context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
 
-  console.log(data)
+  console.log(data);
 
   //const { skills, jobs, projects } = data;
 
@@ -35,7 +35,7 @@ const Home: NextPage = async () => {
   //   return () => window.removeEventListener("scroll", toggleVisibility);
   // }, []);
 
-  return <HomePageLayout apiResponse={data} error={error} loading={loading} />;
+  return <HomePageLayout cmsApiResponse={data} error={error} loading={loading} />;
 };
 
 export default Home;

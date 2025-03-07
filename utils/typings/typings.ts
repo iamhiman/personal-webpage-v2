@@ -1,3 +1,5 @@
+import { ApolloError } from "@apollo/client";
+
 export interface IUrl {
   url: string;
 }
@@ -62,6 +64,6 @@ export interface ICmsApiResponse {
 
 export interface IHomePageLayoutProps {
   cmsApiResponse: ICmsApiResponse;
-  error: boolean | undefined;
+  error: ApolloError | undefined;
   loading: boolean | undefined;
 }
