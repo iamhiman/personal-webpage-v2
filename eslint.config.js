@@ -34,6 +34,7 @@ export default tseslint.config(
           varsIgnorePattern: "^React$", // Ignore unused React import specifically
         },
       ],
+      "@typescript-eslint/no-non-null-asserted-optional-chain": "ignore"
     },
     settings: {
       react: {

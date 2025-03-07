@@ -49,7 +49,19 @@ export interface IFormData {
 }
 
 export interface INavbarProps {
-  onNavItemClick?: (item: string) => void;
-  switchTheme?: () => void;
-  theme?: string;
+  onNavItemClick: (item: string) => void;
+  switchTheme: () => void;
+  theme: string;
+}
+
+export interface ICmsApiResponse {
+  jobs: IJobs[];
+  projects: IProjects[];
+  skills: ISkills[];
+}
+
+export interface IHomePageLayoutProps {
+  cmsApiResponse: ICmsApiResponse;
+  error: boolean | undefined;
+  loading: boolean | undefined;
 }
