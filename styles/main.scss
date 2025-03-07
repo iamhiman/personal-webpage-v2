@@ -57,61 +57,22 @@ a {
   --skills-card-shadow: #ffffff;
 }
 
-@mixin imageSize($width, $height, $fit) {
-  width: $width;
-  height: $height;
-  object-fit: $fit;
-}
 
-@mixin flexSettings($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
+// .scroll-up {
+//   @include imageSize(40px, 40px, contain);
+//   @include borderWithRadius(2px solid #9c27b0, 50%);
+//   padding: 8px;
+//   position: fixed;
+//   bottom: 20px;
+//   right: 20px;
+//   z-index: 1000;
+//   cursor: pointer;
+// }
 
-@mixin sectionLayout($padding, $background) {
-  background-color: $background;
-  padding: $padding;
-}
-
-@mixin headingLayout($fontSize, $textAlign, $marginBottom, $color) {
-  font-size: $fontSize;
-  text-align: $textAlign;
-  margin-bottom: $marginBottom;
-  color: $color;
-}
-
-@mixin borderWithRadius($border, $borderRadius) {
-  border: $border;
-  border-radius: $borderRadius;
-}
-
-@mixin colorWithBackground($color, $backgroundColor) {
-  color: $color;
-  background-color: $backgroundColor;
-}
-
-@mixin lineTransform($top, $transform) {
-  top: $top;
-  transform: $transform;
-}
-
-.scroll-up {
-  @include imageSize(40px, 40px, contain);
-  @include borderWithRadius(2px solid #9c27b0, 50%);
-  padding: 8px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-@import "./navbar";
-@import "./about";
-@import "./jobs";
-@import "./projects";
-@import "./skills";
-@import "./contact";
-@import "./footer";
+// @import "./navbar";
+// @import "./about";
+// @import "./jobs";
+// @import "./projects";
+// @import "./skills";
+// @import "./contact";
+// @import "./footer";

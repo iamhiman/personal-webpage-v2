@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 // import { useEffect, useRef, useState } from "react";
 // import { ToastContainer } from "react-toastify";
-import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../utils/typings/typings";
+//import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../utils/typings/typings";
 // import { Navbar } from "../components/Navbar";
 // import { About } from "../components/About";
 // import { Jobs } from "../components/Jobs";
@@ -10,23 +10,24 @@ import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../utils/typin
 // import { Contact } from "../components/Contact";
 // import { Footer } from "../components/Footer";
 // import ScrollUp from "../assets/scrollup.webp";
-import client, { QUERY } from "../utils/lib/apolloClient";
+// import client, { QUERY } from "../utils/lib/apolloClient";
+import { HomePageLayout } from "@/layouts";
 
-interface IHomeProps {
-  jobs: IJobs[];
-  projects: IProjects[];
-  skills: ISkills[];
-}
+// interface IHomeProps {
+//   jobs: IJobs[];
+//   projects: IProjects[];
+//   skills: ISkills[];
+// }
 
-const Home: NextPage<IHomeProps> = async () => {
-  const { data } = await client.query({
-    query: QUERY,
-    context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
-  });
+const Home: NextPage = () => {
+  // const { data, error, loading } = await client.query({
+  //   query: QUERY,
+  //   context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
+  // });
 
-  const { skills, jobs, projects } = data;
+  // const { skills, jobs, projects } = data;
 
-  console.log(skills, jobs, projects);
+  // console.log(skills, jobs, projects);
 
   // const jobsRef = useRef<HTMLElement>(null);
   // const projectsRef = useRef<HTMLElement>(null);
@@ -94,55 +95,55 @@ const Home: NextPage<IHomeProps> = async () => {
   //   window.scrollTo(scrollObject);
   // };
 
-  return (
-    <div>
-      hello
-      {/* <main data-theme={theme}>
-        <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
-
-        <section className={SECTION.ABOUT}>
-          <About />
-        </section>
-
-        <section className={SECTION.JOBS} ref={jobsRef}>
-          <Jobs jobs={jobs} />
-        </section>
-
-        <section className={SECTION.PROJECTS} ref={projectsRef}>
-          <Projects projects={projects} />
-        </section>
-
-        <section className={SECTION.SKILLS} ref={skillsRef}>
-          <Skills skills={skills} />
-        </section>
-
-        <section className="contact" ref={contactRef}>
-          <Contact theme={theme as Theme} />
-        </section>
-
-        <Footer />
-
-        {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
-
-        <ToastContainer
-          position="top-right"
-          autoClose={3500}
-          hideProgressBar={false}
-          closeOnClick={true}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-        />
-      </main> */}
-    </div>
-  );
+  return <HomePageLayout  />;
 };
 
 export default Home;
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   // const { error, loading, data } = await api.query({ query: QUERY });
-//   const data = await fetchGraphQL()
-//   const { skills, jobs, projects } = data;
+// // export const getStaticProps: GetStaticProps = async () => {
+// //   // const { error, loading, data } = await api.query({ query: QUERY });
+// //   const data = await fetchGraphQL()
+// //   const { skills, jobs, projects } = data;
 
-//   return { props: { skills, jobs, projects }, revalidate: 10 };
-// };
+// //   return { props: { skills, jobs, projects }, revalidate: 10 };
+// // };
+
+//     // <div>
+//     //   hello
+//       {/* <main data-theme={theme}>
+//         <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
+
+//         <section className={SECTION.ABOUT}>
+//           <About />
+//         </section>
+
+//         <section className={SECTION.JOBS} ref={jobsRef}>
+//           <Jobs jobs={jobs} />
+//         </section>
+
+//         <section className={SECTION.PROJECTS} ref={projectsRef}>
+//           <Projects projects={projects} />
+//         </section>
+
+//         <section className={SECTION.SKILLS} ref={skillsRef}>
+//           <Skills skills={skills} />
+//         </section>
+
+//         <section className="contact" ref={contactRef}>
+//           <Contact theme={theme as Theme} />
+//         </section>
+
+//         <Footer />
+
+//         {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
+
+//         <ToastContainer
+//           position="top-right"
+//           autoClose={3500}
+//           hideProgressBar={false}
+//           closeOnClick={true}
+//           pauseOnFocusLoss={false}
+//           pauseOnHover={false}
+//         />
+//       </main> */}
+//     // </div>

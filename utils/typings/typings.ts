@@ -47,3 +47,9 @@ export interface IFormData {
   email: IFormFields;
   message: IFormFields;
 }
+
+export interface INavbarProps {
+  onNavItemClick?: (item: string) => void;
+  switchTheme?: () => void;
+  theme?: string;
+}

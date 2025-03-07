@@ -1,0 +1,39 @@
+@mixin imageSize($width, $height, $fit) {
+  width: $width;
+  height: $height;
+  object-fit: $fit;
+}
+
+@mixin flexSettings($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin sectionLayout($padding, $background) {
+  background-color: $background;
+  padding: $padding;
+}
+
+@mixin headingLayout($fontSize, $textAlign, $marginBottom, $color) {
+  font-size: $fontSize;
+  text-align: $textAlign;
+  margin-bottom: $marginBottom;
+  color: $color;
+}
+
+@mixin borderWithRadius($border, $borderRadius) {
+  border: $border;
+  border-radius: $borderRadius;
+}
+
+@mixin colorWithBackground($color, $backgroundColor) {
+  color: $color;
+  background-color: $backgroundColor;
+}
+
+@mixin lineTransform($top, $transform) {
+  top: $top;
+  transform: $transform;
+}

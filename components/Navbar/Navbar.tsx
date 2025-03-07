@@ -1,57 +1,54 @@
+"use client";
+
 import type { NextPage } from "next";
-import { useState } from "react";
-import Moon from "../assets/moon.webp";
-import Sun from "../assets/sun.webp";
+import classNames from "classnames/bind";
+import Moon from "../../assets/moon.webp";
+import Sun from "../../assets/sun.webp";
 import { SECTION, THEME } from "@/utils/constants/constants";
+import { INavbarProps } from "@/utils/typings/typings";
+import styles from "./Navbar.module.scss";
 
-interface INavbarProps {
-  onNavItemClick: (item: string) => void;
-  switchTheme: () => void;
-  theme: string;
-}
+const cx = classNames.bind(styles);
 
-export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, switchTheme = () => {}, theme }) => {
-  const [showSidebar, setShowSidebar] = useState<boolean>(false);
-
+const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, switchTheme = () => {}, theme }) => {
   return (
-    <>
-      <nav className="navbar">
-        <div className="menu">
-          <input
-            className="check"
-            type="checkbox"
-            onChange={() => setShowSidebar(!showSidebar)}
-            checked={showSidebar}
-          />
-          <div className={showSidebar ? "line line-1" : "line line1"}></div>
-          <div className={showSidebar ? "line line-2" : "line line2"}></div>
-          <div className={showSidebar ? "line line-3" : "line line3"}></div>
-        </div>
+    <nav className={cx("navbar")}>
+      {/* <div className="menu">
+        <input className="check" type="checkbox" onChange={() => setShowSidebar(!showSidebar)} checked={showSidebar} />
+        <div className={showSidebar ? "line line-1" : "line line1"}></div>
+        <div className={showSidebar ? "line line-2" : "line line2"}></div>
+        <div className={showSidebar ? "line line-3" : "line line3"}></div>
+      </div> */}
 
-        <p className="navbar_name">
-          <span>Himanshu</span>
-          <img src={theme === THEME.LIGHT ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
+      <p className={cx("navbar-name")}>
+        <span>Himanshu</span>
+        <img src={theme === THEME.LIGHT ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
+      </p>
+      <div className={cx("navbar-list")}>
+        <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.ABOUT)}>
+          About
         </p>
-        <div className="navbar_list">
-          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.ABOUT)}>
-            About
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.JOBS)}>
-            Work
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.PROJECTS)}>
-            Projects
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.SKILLS)}>
-            Skills
-          </p>
-          <p className="navbar_list_item" onClick={() => onNavItemClick(SECTION.CONTACT)}>
-            Contact
-          </p>
-        </div>
-      </nav>
+        <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.JOBS)}>
+          Work
+        </p>
+        <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.PROJECTS)}>
+          Projects
+        </p>
+        <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.SKILLS)}>
+          Skills
+        </p>
+        <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.CONTACT)}>
+          Contact
+        </p>
+      </div>
+    </nav>
+  );
+};
 
-      <div className={showSidebar ? "sidebar active" : "sidebar"}>
+export default Navbar;
+
+{
+  /* <div className={showSidebar ? "sidebar active" : "sidebar"}>
         <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.ABOUT)}>
           About
         </p>
@@ -67,7 +64,5 @@ export const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, swit
         <p className="sidebar_item" onClick={() => onNavItemClick(SECTION.CONTACT)}>
           Contact
         </p>
-      </div>
-    </>
-  );
-};
+      </div> */
+}
