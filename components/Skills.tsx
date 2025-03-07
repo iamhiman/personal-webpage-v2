@@ -12,11 +12,11 @@ export const Skills: NextPage<ISKillsProps> = ({ skills }) => {
   const uilibraries = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.UI_LIBRARIES);
   const backend = skills?.filter(
     skill =>
-      skill?.fieldType?.toLowerCase() === SKILLSET.BACKEND || skill?.fieldType?.toLowerCase() === SKILLSET.DATABASE
+      skill?.fieldType?.toLowerCase() === SKILLSET.BACKEND || skill?.fieldType?.toLowerCase() === SKILLSET.DATABASE,
   );
   const headlessCms = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.HEADLESS_CMS);
   const testing_tools = skills?.filter(
-    skill => skill?.fieldType?.toLowerCase() === SKILLSET.TESTING || skill?.fieldType?.toLowerCase() === SKILLSET.TOOLS
+    skill => skill?.fieldType?.toLowerCase() === SKILLSET.TESTING || skill?.fieldType?.toLowerCase() === SKILLSET.TOOLS,
   );
   const familiar = skills?.filter(skill => skill?.proficient === false);
 

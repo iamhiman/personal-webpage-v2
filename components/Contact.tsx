@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import type { NextPage } from "next";
 import { useState, useRef } from "react";
@@ -82,7 +82,7 @@ export const Contact: NextPage<IContactProps> = ({ theme }) => {
           process.env.NEXT_PUBLIC_SERVICE_ID!,
           process.env.NEXT_PUBLIC_TEMPLATE_ID!,
           form.current!,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY!
+          process.env.NEXT_PUBLIC_PUBLIC_KEY!,
         );
 
         if (response.status === 200) {

@@ -2,15 +2,18 @@
   "name": "personal-webpage-v2",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write {components/**/*,pages/**/*,styles/**/*}.{js,jsx,ts,tsx,json,scss}",
+    "lint": "eslint {components/**/*,containers/**/*,layouts/**/*,styles/**/*}.{js,jsx,ts,tsx,json,scss} --fix",
+    "lint:check": "eslint {components/**/*,containers/**/*,layouts/**/*,styles/**/*}.{js,jsx,ts,tsx,json,scss}",
+    "format": "prettier --write {components/**/*,containers/**/*,layouts/**/*,styles/**/*}.{js,jsx,ts,tsx,json,scss}",
     "ts-lint": "tsc --noEmit --incremental --watch"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "next": "15.2.1",
     "react": "19.0.0",
     "react-dom": "19.0.0"
@@ -18,16 +21,27 @@
   "devDependencies": {
     "@apollo/client": "^3.13.1",
     "@emailjs/browser": "^4.4.1",
+    "@eslint/js": "^9.21.0",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^9.21.0",
     "eslint-config-next": "^15.2.1",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
     "graphql": "^16.10.0",
     "prettier": "^3.5.3",
     "react-toastify": "^11.0.5",
     "sass": "^1.85.1",
-    "typescript": "^5.8.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   },
   "overrides": {
     "@types/react": "19.0.10",
