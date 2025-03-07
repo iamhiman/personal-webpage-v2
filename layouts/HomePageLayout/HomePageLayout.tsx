@@ -1,4 +1,5 @@
-import { Navbar } from "@/components";
+import { Navbar, Sidebar } from "@/components";
+import { AboutSection } from "@/containers";
 import client, { QUERY } from "@/utils/lib/apolloClient";
 import React from "react";
 
@@ -9,9 +10,12 @@ const HomePageLayout = async () => {
   });
 
   const { skills, jobs, projects } = data;
+
   return (
     <>
       <Navbar />
+      <Sidebar />
+      <AboutSection />
     </>
   );
 };
