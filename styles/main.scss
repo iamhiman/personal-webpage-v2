@@ -1,6 +1,6 @@
 @font-face {
   font-family: Circular Std;
-  src: url("../assets/CircularStd-Book.otf");
+  src: url("/assets/CircularStd-Book.otf");
 }
 
 * {
@@ -56,7 +56,6 @@ a {
   --skills-card-border: #6b7688;
   --skills-card-shadow: #ffffff;
 }
-
 
 // .scroll-up {
 //   @include imageSize(40px, 40px, contain);

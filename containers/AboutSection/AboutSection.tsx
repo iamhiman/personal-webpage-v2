@@ -3,10 +3,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
-import github from "../../assets/github.webp";
-import linkedin from "../../assets/linkedin.webp";
-import instagram from "../../assets/instagram.webp";
-import gmail from "../../assets/gmail.webp";
+import Image from "next/image";
 import styles from "./AboutSection.module.scss";
 
 const cx = classNames.bind(styles);
@@ -23,18 +20,38 @@ const AboutSection: NextPage = () => {
           First Program in C++ in 2012.
         </p>
         <div className={cx("about-left-socialMedia")}>
-          <img src={github.src} alt="" onClick={() => window.open("https://github.com/iamhiman", "_blank")} />
-          <img
-            src={linkedin.src}
-            alt=""
+          <Image
+            src="/assets/github.webp"
+            alt="Example WebP"
+            width={40}
+            height={40}
+            priority
+            onClick={() => window.open("https://github.com/iamhiman", "_blank")}
+          />
+          <Image
+            src="/assets/linkedin.webp"
+            alt="Example WebP"
+            width={40}
+            height={40}
+            priority
             onClick={() => window.open("https://www.linkedin.com/in/himankash/", "_blank")}
           />
-          <img
-            src={instagram.src}
-            alt=""
+          <Image
+            src="/assets/instagram.webp"
+            alt="Example WebP"
+            width={40}
+            height={40}
+            priority
             onClick={() => window.open("https://www.instagram.com/himan_kash/", "_blank")}
           />
-          <img src={gmail.src} alt="" onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")} />
+          <Image
+            src="/assets/gmail.webp"
+            alt="Example WebP"
+            width={40}
+            height={40}
+            priority
+            onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")}
+          />
         </div>
         <div
           className={cx("about-left-starme")}

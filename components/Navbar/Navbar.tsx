@@ -2,8 +2,7 @@
 
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
-import Moon from "../../assets/moon.webp";
-import Sun from "../../assets/sun.webp";
+import Image from "next/image";
 import { SECTION, THEME } from "@/utils/constants/constants";
 import { INavbarProps } from "@/utils/typings/typings";
 import styles from "./Navbar.module.scss";
@@ -15,7 +14,14 @@ const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, switchTheme
     <nav className={cx("navbar")}>
       <p className={cx("navbar-name")}>
         <span>Himanshu</span>
-        <img src={theme === THEME.LIGHT ? Sun.src : Moon.src} alt="" onClick={switchTheme} />
+        <Image
+          src={theme === THEME.LIGHT ? "/assets/sun.webp" : "/assets/moon.webp"}
+          alt="sun-moon-image"
+          width={40}
+          height={40}
+          priority
+          onClick={switchTheme}
+        />
       </p>
       <div className={cx("navbar-list")}>
         <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.ABOUT)}>
