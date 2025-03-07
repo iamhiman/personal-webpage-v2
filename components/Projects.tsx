@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { IProjects, TECHSTACK } from "../typings";
+import { IProjects, TECHSTACK } from "../utils/typings/typings";
 import Github from "../assets/github.webp";
 import Web from "../assets/www.webp";
 import { useEffect, useState } from "react";

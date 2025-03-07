@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import Moon from "../assets/moon.webp";
 import Sun from "../assets/sun.webp";
-import { SECTION, THEME } from "../typings";
+import { SECTION, THEME } from "../utils/typings/typings";
 
 interface INavbarProps {
   onNavItemClick: (item: string) => void;

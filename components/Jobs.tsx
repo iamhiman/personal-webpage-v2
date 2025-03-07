@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { IJobs, Months } from "../typings";
+import { IJobs, Months } from "../utils/typings/typings";
 import linkedin from "../assets/linkedin.webp";
 import www from "../assets/www.webp";
 

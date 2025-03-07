@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ISkills } from "../typings";
+import { ISkills } from "../utils/typings/typings";
 
 interface ISkillProps {
   skills: ISkills[];

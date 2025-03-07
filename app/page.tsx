@@ -1,16 +1,16 @@
-import type { NextPage, GetStaticProps } from "next";
-import { useEffect, useRef, useState } from "react";
-import { ToastContainer } from "react-toastify";
-import { api, QUERY } from "../services";
-import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../typings";
-import { Navbar } from "../components/Navbar";
-import { About } from "../components/About";
-import { Jobs } from "../components/Jobs";
-import { Projects } from "../components/Projects";
-import { Skills } from "../components/Skills";
-import { Contact } from "../components/Contact";
-import { Footer } from "../components/Footer";
-import ScrollUp from "../assets/scrollup.webp";
+import type { NextPage } from "next";
+// import { useEffect, useRef, useState } from "react";
+// import { ToastContainer } from "react-toastify";
+import { ISkills, IJobs, IProjects, Theme, THEME, SECTION } from "../utils/typings/typings";
+// import { Navbar } from "../components/Navbar";
+// import { About } from "../components/About";
+// import { Jobs } from "../components/Jobs";
+// import { Projects } from "../components/Projects";
+// import { Skills } from "../components/Skills";
+// import { Contact } from "../components/Contact";
+// import { Footer } from "../components/Footer";
+// import ScrollUp from "../assets/scrollup.webp";
+import client, { QUERY } from "../utils/lib/apolloClient";
 
 interface IHomeProps {
   jobs: IJobs[];
@@ -18,76 +18,86 @@ interface IHomeProps {
   skills: ISkills[];
 }
 
-const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
-  const jobsRef = useRef<HTMLElement>(null);
-  const projectsRef = useRef<HTMLElement>(null);
-  const skillsRef = useRef<HTMLElement>(null);
-  const contactRef = useRef<HTMLElement>(null);
-  const [theme, setTheme] = useState<string>(THEME.LIGHT);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+const Home: NextPage<IHomeProps> = async () => {
+  const { data } = await client.query({
+    query: QUERY,
+    context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
+  });
 
-  useEffect(() => {
-    const theme = localStorage.getItem("themeValue");
-    setTheme(theme === THEME.LIGHT || !theme ? THEME.LIGHT : THEME.DARK);
-  }, []);
+  const { skills, jobs, projects } = data;
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+  console.log(skills, jobs, projects);
 
-    window.addEventListener("scroll", toggleVisibility);
+  // const jobsRef = useRef<HTMLElement>(null);
+  // const projectsRef = useRef<HTMLElement>(null);
+  // const skillsRef = useRef<HTMLElement>(null);
+  // const contactRef = useRef<HTMLElement>(null);
+  // const [theme, setTheme] = useState<string>(THEME.LIGHT);
+  // const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  // useEffect(() => {1
+  //   const theme = localStorage.getItem("themeValue");
+  //   setTheme(theme === THEME.LIGHT || !theme ? THEME.LIGHT : THEME.DARK);
+  // }, []);
 
-  const switchTheme = () => {
-    const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
-    localStorage.setItem("themeValue", newTheme);
-    setTheme(newTheme);
-  };
+  // useEffect(() => {
+  //   const toggleVisibility = () => {
+  //     if (window.pageYOffset > 500) {
+  //       setIsVisible(true);
+  //     } else {
+  //       setIsVisible(false);
+  //     }
+  //   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  //   window.addEventListener("scroll", toggleVisibility);
 
-  const handleNavItemClick = (item: string) => {
-    let scrollObject = {};
-    switch (item) {
-      case SECTION.ABOUT:
-        scrollObject = { top: 0, behavior: "smooth" };
-        break;
+  //   return () => window.removeEventListener("scroll", toggleVisibility);
+  // }, []);
 
-      case SECTION.JOBS:
-        scrollObject = { top: jobsRef.current?.offsetTop! - 70, behavior: "smooth" };
-        break;
+  // const switchTheme = () => {
+  //   const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
+  //   localStorage.setItem("themeValue", newTheme);
+  //   setTheme(newTheme);
+  // };
 
-      case SECTION.PROJECTS:
-        scrollObject = { top: projectsRef.current?.offsetTop! - 70, behavior: "smooth" };
-        break;
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
-      case SECTION.SKILLS:
-        scrollObject = { top: skillsRef.current?.offsetTop! - 70, behavior: "smooth" };
-        break;
+  // const handleNavItemClick = (item: string) => {
+  //   let scrollObject = {};
+  //   switch (item) {
+  //     case SECTION.ABOUT:
+  //       scrollObject = { top: 0, behavior: "smooth" };
+  //       break;
 
-      case SECTION.CONTACT:
-        scrollObject = { top: contactRef.current?.offsetTop! - 70, behavior: "smooth" };
-        break;
+  //     case SECTION.JOBS:
+  //       scrollObject = { top: jobsRef.current?.offsetTop! - 70, behavior: "smooth" };
+  //       break;
 
-      default:
-        break;
-    }
+  //     case SECTION.PROJECTS:
+  //       scrollObject = { top: projectsRef.current?.offsetTop! - 70, behavior: "smooth" };
+  //       break;
 
-    window.scrollTo(scrollObject);
-  };
+  //     case SECTION.SKILLS:
+  //       scrollObject = { top: skillsRef.current?.offsetTop! - 70, behavior: "smooth" };
+  //       break;
+
+  //     case SECTION.CONTACT:
+  //       scrollObject = { top: contactRef.current?.offsetTop! - 70, behavior: "smooth" };
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+
+  //   window.scrollTo(scrollObject);
+  // };
 
   return (
     <div>
-      <main data-theme={theme}>
+      hello
+      {/* <main data-theme={theme}>
         <Navbar onNavItemClick={handleNavItemClick} switchTheme={switchTheme} theme={theme} />
 
         <section className={SECTION.ABOUT}>
@@ -122,16 +132,17 @@ const Home: NextPage<IHomeProps> = ({ jobs, projects, skills }) => {
           pauseOnFocusLoss={false}
           pauseOnHover={false}
         />
-      </main>
+      </main> */}
     </div>
   );
 };
 
 export default Home;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const { error, loading, data } = await api.query({ query: QUERY });
-  const { skills, jobs, projects } = data;
+// export const getStaticProps: GetStaticProps = async () => {
+//   // const { error, loading, data } = await api.query({ query: QUERY });
+//   const data = await fetchGraphQL()
+//   const { skills, jobs, projects } = data;
 
-  return { props: { skills, jobs, projects }, revalidate: 10 };
-};
+//   return { props: { skills, jobs, projects }, revalidate: 10 };
+// };

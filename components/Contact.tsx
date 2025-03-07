@@ -1,10 +1,12 @@
+'use client'
+
 import type { NextPage } from "next";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 // import { ThreeDots } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import Gmail from "../assets/gmail.webp";
-import { IFormData, THEME, Theme } from "../typings";
+import { IFormData, THEME, Theme } from "../utils/typings/typings";
 
 interface IContactProps {
   theme: Theme;

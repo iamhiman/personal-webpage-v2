@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ISkills, SKILLSET } from "../typings";
+import { ISkills, SKILLSET } from "../utils/typings/typings";
 import { Skill } from "./Skill";
 
 interface ISKillsProps {
