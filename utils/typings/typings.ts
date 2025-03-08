@@ -76,10 +76,19 @@ export interface IJobsSectionProps {
   jobs: IJobs[];
 }
 
+export interface ISkillsSectionProps {
+  skills: ISkills[];
+}
+
 export interface IProjectCardProps {
   project: IProjects;
 }
 
 export interface IJobCardProps {
   job: IJobs;
+}
+
+export interface ISkillCardProps {
+  skills: ISkills[];
+  skillName: string;
 }

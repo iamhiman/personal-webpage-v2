@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import styles from "./Sidebar.module.scss";
 
 const cx = classNames.bind(styles);
 
-const Sidebar = () => {
+const Sidebar: NextPage = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
   return (

@@ -1,0 +1,15 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.skills {
+  @include sectionLayout(40px 25px, var(--background-one));
+
+  &-heading {
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
+  }
+
+  &-container {
+    @include flexSettings(column, center, center);
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

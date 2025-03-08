@@ -1,6 +1,7 @@
-import Navbar from "./Navbar/Navbar";
-import Sidebar from "./Sidebar/Sidebar";
-import ProjectCard from "./ProjectCard/ProjectCard";
-import JobCard from "./JobCard/JobCard";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import ProjectCard from "./ProjectCard";
+import JobCard from "./JobCard";
+import SkillCard from "./SkillCard";
 
-export { Navbar, Sidebar, ProjectCard, JobCard };
+export { Navbar, Sidebar, ProjectCard, JobCard, SkillCard };

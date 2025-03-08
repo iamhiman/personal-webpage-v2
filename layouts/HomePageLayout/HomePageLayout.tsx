@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import { Navbar, Sidebar } from "@/components";
-import { AboutSection, JobsSection, ProjectsSection } from "@/containers";
+import { AboutSection, JobsSection, ProjectsSection, SkillsSection } from "@/containers";
 import { SECTION, THEME } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import styles from "./HomePageLayout.module.scss";
@@ -81,7 +81,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
           <ProjectsSection projects={projects} />
         </section>
         <section className={cx("skills-section")} ref={skillsRef}>
-          <AboutSection />
+          <SkillsSection skills={skills} />
         </section>
         <section className={cx("contact-section")} ref={contactRef}>
           <AboutSection />
