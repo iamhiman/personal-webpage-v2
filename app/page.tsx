@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 // import { ToastContainer } from "react-toastify";
 import { HomePageLayout } from "@/layouts";
-import client, { QUERY } from "@/utils/lib/apolloClient";
+import { apolloClient, GraphqlQuery } from "@/utils/lib/apolloClient";
 
 const Home: NextPage = async () => {
-  const { data, error, loading } = await client.query({
-    query: QUERY,
+  const { data, error, loading } = await apolloClient.query({
+    query: GraphqlQuery,
     context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
 

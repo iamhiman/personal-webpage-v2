@@ -1,26 +1,22 @@
 import React from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
+import { SkillCard } from "@/components";
 import { ISkillsSectionProps } from "@/utils/typings/typings";
 import { SKILLSET } from "@/utils/constants/constants";
+import { useFilteredSkills } from "@/utils/hooks/useFilteredSkills";
 import styles from "./SkillsSection.module.scss";
-import { SkillCard } from "@/components";
 
 const cx = classNames.bind(styles);
 
 const SkillsSection: NextPage<ISkillsSectionProps> = ({ skills }) => {
-  const languages = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.LANGUAGES);
-  const frontend = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.FRONTEND);
-  const uilibraries = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.UI_LIBRARIES);
-  const backend = skills?.filter(
-    skill =>
-      skill?.fieldType?.toLowerCase() === SKILLSET.BACKEND || skill?.fieldType?.toLowerCase() === SKILLSET.DATABASE,
-  );
-  const headlessCms = skills?.filter(skill => skill?.fieldType?.toLowerCase() === SKILLSET.HEADLESS_CMS);
-  const testing_tools = skills?.filter(
-    skill => skill?.fieldType?.toLowerCase() === SKILLSET.TESTING || skill?.fieldType?.toLowerCase() === SKILLSET.TOOLS,
-  );
-  const familiar = skills?.filter(skill => skill?.proficient === false);
+  const { filteredSkill: languages } = useFilteredSkills(skills, SKILLSET.LANGUAGES);
+  const { filteredSkill: frontend } = useFilteredSkills(skills, SKILLSET.FRONTEND);
+  const { filteredSkill: uilibraries } = useFilteredSkills(skills, SKILLSET.UI_LIBRARIES);
+  const { filteredSkill: headlessCms } = useFilteredSkills(skills, SKILLSET.HEADLESS_CMS);
+  const { filteredSkill: backend } = useFilteredSkills(skills, [SKILLSET.BACKEND, SKILLSET.DATABASE]);
+  const { filteredSkill: testing_tools } = useFilteredSkills(skills, [SKILLSET.TESTING, SKILLSET.TOOLS]);
+  const { filteredSkill: familiar } = useFilteredSkills(skills);
 
   return (
     <div className={cx("skills")}>

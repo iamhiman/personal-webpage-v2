@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, HttpLink, gql } from "@apollo/client";
 
-const client = new ApolloClient({
+export const apolloClient = new ApolloClient({
   link: new HttpLink({
     uri: `${process.env.NEXT_API_URL}`,
     fetchOptions: { cache: "no-store" }, // Avoid browser caching, let Next.js handle it
@@ -8,9 +8,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default client;
-
-export const QUERY = gql`
+export const GraphqlQuery = gql`
   {
     skills(orderBy: uniqueId_ASC) {
       uniqueId
