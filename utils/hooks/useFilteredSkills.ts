@@ -7,7 +7,9 @@ export const useFilteredSkills = (skills: ISkills[], skillType?: string | string
   if (typeof skillType === "string") {
     filteredSkillRef.current.filteredSkill = skills?.filter(skill => skill?.fieldType?.toLowerCase() === skillType);
   } else if (Array.isArray(skillType)) {
-    filteredSkillRef.current.filteredSkill = skills.filter(skill => skillType.includes(skill.fieldType as string));
+    filteredSkillRef.current.filteredSkill = skills.filter(skill =>
+      skillType.includes(skill.fieldType?.toLowerCase() as string),
+    );
   } else {
     filteredSkillRef.current.filteredSkill = skills?.filter(skill => skill?.proficient === false);
   }
