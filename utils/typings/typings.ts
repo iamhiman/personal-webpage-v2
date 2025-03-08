@@ -72,6 +72,14 @@ export interface IProjectsSectionProps {
   projects: IProjects[];
 }
 
+export interface IJobsSectionProps {
+  jobs: IJobs[];
+}
+
 export interface IProjectCardProps {
   project: IProjects;
+}
+
+export interface IJobCardProps {
+  job: IJobs;
 }
