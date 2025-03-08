@@ -6,7 +6,8 @@ import { apolloClient, GraphqlQuery } from "@/utils/lib/apolloClient";
 const Home: NextPage = async () => {
   const { data, error, loading } = await apolloClient.query({
     query: GraphqlQuery,
-    context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
+    fetchPolicy: "network-only", // Ensure fresh data for ISR
+    // context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
 
   // useEffect(() => {
@@ -28,8 +29,9 @@ const Home: NextPage = async () => {
 
 export default Home;
 
+// ✅ ISR: Regenerate this page every 30 seconds
+export const revalidate = 30;
+
 //         <Footer />
 
 //         {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
-
-
