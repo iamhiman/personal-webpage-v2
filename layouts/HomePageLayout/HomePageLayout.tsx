@@ -4,10 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import { Navbar, Sidebar } from "@/components";
-import { AboutSection, JobsSection, ProjectsSection, SkillsSection } from "@/containers";
+import { AboutSection, ContactSection, JobsSection, ProjectsSection, SkillsSection } from "@/containers";
 import { SECTION, THEME } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import styles from "./HomePageLayout.module.scss";
+import { ToastContainer } from "react-toastify";
 
 const cx = classNames.bind(styles);
 
@@ -84,9 +85,17 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
           <SkillsSection skills={skills} />
         </section>
         <section className={cx("contact-section")} ref={contactRef}>
-          <AboutSection />
+          <ContactSection />
         </section>
       </main>
+      <ToastContainer
+        position="top-right"
+        autoClose={3500}
+        hideProgressBar={false}
+        closeOnClick={true}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+      />
     </div>
   );
 };

@@ -32,11 +32,4 @@ export default Home;
 
 //         {isVisible && <img src={ScrollUp.src} alt="" className="scroll-up" onClick={scrollToTop} />}
 
-//         <ToastContainer
-//           position="top-right"
-//           autoClose={3500}
-//           hideProgressBar={false}
-//           closeOnClick={true}
-//           pauseOnFocusLoss={false}
-//           pauseOnHover={false}
-//         />
+
