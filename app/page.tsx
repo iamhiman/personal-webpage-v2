@@ -7,6 +7,7 @@ const Home: NextPage = async () => {
   const { data, error, loading } = await apolloClient.query({
     query: GraphqlQuery,
     fetchPolicy: "network-only", // Ensure fresh data for ISR
+    
     // context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
 
@@ -30,7 +31,7 @@ const Home: NextPage = async () => {
 export default Home;
 
 // ✅ ISR: Regenerate this page every 30 seconds
-export const revalidate = 30;
+export const revalidate = 5;
 
 //         <Footer />
 
