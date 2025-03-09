@@ -4,9 +4,6 @@
   @include flexSettings(row, space-between, center);
   @include colorWithBackground(#9c27b0, var(--background-one));
   height: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;

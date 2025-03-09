@@ -59,7 +59,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
 
   return (
     <div data-theme={theme} className={cx("home-page-layout")}>
-      <header>
+      <header className={cx("header")}>
         <Navbar theme={theme} onNavItemClick={handleNavItemClick} switchTheme={switchTheme} />
       </header>
       <main>

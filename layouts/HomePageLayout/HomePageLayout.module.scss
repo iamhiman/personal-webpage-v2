@@ -1,6 +1,12 @@
 @use "../../styles/commonStylesMixins.scss" as *;
 
 .home-page-layout {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
   .scroll-up {
     @include imageSize(40px, 40px, contain);
     @include borderWithRadius(2px solid #9c27b0, 50%);
