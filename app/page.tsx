@@ -3,12 +3,14 @@ import type { NextPage } from "next";
 import { HomePageLayout } from "@/layouts";
 import { apolloClient, GraphqlQuery } from "@/utils/lib/apolloClient";
 
+// Next.js will invalidate the cache when a
+// request comes in, at most once every 60 seconds.
+export const revalidate = 10
+
 const Home: NextPage = async () => {
   const { data, error, loading } = await apolloClient.query({
     query: GraphqlQuery,
     fetchPolicy: "network-only", // Ensure fresh data for ISR
-    
-    // context: { fetchOptions: { next: { revalidate: 30 } } }, // ISR: Revalidate every 30s
   });
 
   // useEffect(() => {
@@ -29,9 +31,6 @@ const Home: NextPage = async () => {
 };
 
 export default Home;
-
-// ✅ ISR: Regenerate this page every 30 seconds
-export const revalidate = 5;
 
 //         <Footer />
 
