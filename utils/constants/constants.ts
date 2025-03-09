@@ -38,4 +38,10 @@ export const TechStack = {
   Cpp: "C++",
 };
 
-export const SECTION = { ABOUT: "about", JOBS: "jobs", PROJECTS: "projects", SKILLS: "skills", CONTACT: "contact" };
+export const SECTION = {
+  ABOUT: "about",
+  JOBS: "jobs",
+  PROJECTS: "projects",
+  SKILLS: "skills",
+  CONTACT: "contact",
+};
