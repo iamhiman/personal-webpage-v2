@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { SkillCard } from "@/components";
 import { ISkillsSectionProps } from "@/utils/typings/typings";
 import { SKILLSET } from "@/utils/constants/constants";
-import { useFilteredSkills } from "@/utils/hooks/useFilteredSkills";
+import { useFilteredSkills } from "@/utils/hooks";
 import styles from "./SkillsSection.module.scss";
 
 const cx = classNames.bind(styles);

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import { Navbar } from "@/components";
@@ -16,8 +16,7 @@ import { SECTION } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import { ToastContainer } from "react-toastify";
 import Image from "next/image";
-import { useScroll } from "@/utils/hooks/useScroll";
-import { useTheme } from "@/utils/hooks/useTheme";
+import { useScroll, useTheme } from "@/utils/hooks";
 import styles from "./HomePageLayout.module.scss";
 
 const cx = classNames.bind(styles);

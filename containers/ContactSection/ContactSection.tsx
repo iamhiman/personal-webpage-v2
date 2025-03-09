@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import Image from "next/image";
 import { ContactForm } from "@/components";
-import { useForm } from "@/utils/hooks/useForm";
+import { useForm } from "@/utils/hooks";
 import styles from "./ContactSection.module.scss";
 
 const cx = classNames.bind(styles);
