@@ -19,32 +19,32 @@ const FooterSection: NextPage = () => {
           <Image
             src="/assets/github.webp"
             alt="Github Link"
-            width={30}
-            height={30}
+            width={35}
+            height={35}
             priority
             onClick={() => window.open("https://github.com/iamhiman", "_blank")}
           />
           <Image
             src="/assets/linkedin.webp"
             alt="Linkedin Link"
-            width={30}
-            height={30}
+            width={35}
+            height={35}
             priority
             onClick={() => window.open("https://www.linkedin.com/in/himankash/", "_blank")}
           />
           <Image
             src="/assets/instagram.webp"
             alt=" Instagram Link"
-            width={30}
-            height={30}
+            width={35}
+            height={35}
             priority
             onClick={() => window.open("https://www.instagram.com/himan_kash/", "_blank")}
           />
           <Image
             src="/assets/gmail.webp"
             alt="Gmail Link"
-            width={30}
-            height={30}
+            width={35}
+            height={35}
             priority
             onClick={() => window.open("mailto:himanshu27kashyap@gmail.com", "_blank")}
           />

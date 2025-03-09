@@ -7,8 +7,10 @@ import { Navbar, Sidebar } from "@/components";
 import { AboutSection, ContactSection, FooterSection, JobsSection, ProjectsSection, SkillsSection } from "@/containers";
 import { SECTION, THEME } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
-import styles from "./HomePageLayout.module.scss";
 import { ToastContainer } from "react-toastify";
+import Image from "next/image";
+import { useScroll } from "@/utils/hooks/useScroll";
+import styles from "./HomePageLayout.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +20,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
   const projectsRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  // const [isVisible, setIsVisible] = useState<boolean>(false);
+  const { isScrollButtonVisible } = useScroll();
 
   const { jobs, skills, projects } = cmsApiResponse;
 
@@ -68,7 +70,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
   };
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className={cx("home-page-layout")}>
       <Navbar theme={theme} onNavItemClick={handleNavItemClick} switchTheme={switchTheme} />
       <Sidebar />
       <main>
@@ -89,6 +91,17 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
         </section>
       </main>
       <FooterSection />
+      {isScrollButtonVisible && (
+        <Image
+          src="/assets/scrollup.webp"
+          alt="scroll-up-button"
+          className={cx("scroll-up")}
+          width={40}
+          height={40}
+          priority
+          onClick={scrollToTop}
+        />
+      )}
       <ToastContainer
         position="top-right"
         autoClose={3500}
