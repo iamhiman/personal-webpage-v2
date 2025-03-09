@@ -14,7 +14,14 @@ const JobCard: NextPage<IJobCardProps> = ({ job }) => {
       <h2>{job?.company}</h2>
       <h3>{job?.designation}</h3>
       {job?.logo?.url && (
-        <Image src={job?.logo?.url} alt="company-logo" width={90} height={40} className={cx("job-card-company-logo")} />
+        <Image
+          src={job?.logo?.url}
+          alt="company-logo"
+          width={90}
+          height={40}
+          className={cx("job-card-company-logo")}
+          priority
+        />
       )}
       <div className={cx("job-card-timeline")}>
         {`${Months[parseInt(job?.from?.split("-")[1])]}, ${job?.from?.split("-")[0]}`}
@@ -30,6 +37,7 @@ const JobCard: NextPage<IJobCardProps> = ({ job }) => {
             alt="company-linkedin-link"
             width={30}
             height={30}
+            priority
             onClick={() => window.open(job?.companyLinkedin, "_blank")}
           />
         )}
@@ -39,6 +47,7 @@ const JobCard: NextPage<IJobCardProps> = ({ job }) => {
             alt="company-link"
             width={30}
             height={30}
+            priority
             onClick={() => window.open(job?.companyUrl, "_blank")}
           />
         )}

@@ -1,3 +1,5 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
 .footer {
   @include flexSettings(row, space-around, center);
   @include sectionLayout(20px 20px, var(--background-one));
@@ -5,20 +7,20 @@
   border-top: 2px solid var(--border-one);
   color: var(--text-color-one);
 
-  &_copyright {
-    &_textOne {
+  &-copyright {
+    &-main-text {
       margin-bottom: 5px;
     }
 
-    &_textTwo {
+    &-sub-text {
       margin-bottom: 5px;
     }
   }
 
-  &_socialMedia {
+  &-socialmedia {
     text-align: center;
 
-    &_links {
+    &-links {
       margin-top: 20px;
 
       img {
@@ -36,7 +38,7 @@
     text-align: center;
     font-size: 18px;
 
-    &_socialMedia {
+    &-socialmedia {
       margin-top: 20px;
     }
   }

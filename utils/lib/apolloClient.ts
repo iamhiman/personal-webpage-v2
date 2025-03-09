@@ -3,7 +3,6 @@ import { ApolloClient, InMemoryCache, HttpLink, gql } from "@apollo/client";
 export const apolloClient = new ApolloClient({
   link: new HttpLink({
     uri: `${process.env.NEXT_API_URL}`,
-    //TODO
     fetchOptions: {
       next: { revalidate: 10 }, // Ensure ISR triggers correctly
     },

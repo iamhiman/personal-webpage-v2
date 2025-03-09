@@ -4,7 +4,7 @@ import { HomePageLayout } from "@/layouts";
 import { apolloClient, GraphqlQuery } from "@/utils/lib/apolloClient";
 
 // Next.js will invalidate the cache when a
-// request comes in, at most once every 60 seconds.
+// request comes in, at most once every 10 seconds.
 export const revalidate = 10
 
 const Home: NextPage = async () => {
