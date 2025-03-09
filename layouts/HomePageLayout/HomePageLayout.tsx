@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
-import { Navbar, Sidebar } from "@/components";
+import { Navbar } from "@/components";
 import {
   AboutSection,
   ContactSection,
@@ -53,7 +53,6 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
   return (
     <div data-theme={theme} className={cx("home-page-layout")}>
       <Navbar theme={theme} onNavItemClick={handleNavItemClick} switchTheme={switchTheme} />
-      <Sidebar />
       <main>
         <section className={cx("about-section")}>
           <AboutSection />
