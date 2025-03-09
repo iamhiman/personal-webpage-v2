@@ -12,32 +12,22 @@ import {
   ProjectsSection,
   SkillsSection,
 } from "@/containers";
-import { SECTION, THEME } from "@/utils/constants/constants";
+import { SECTION } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import { ToastContainer } from "react-toastify";
 import Image from "next/image";
 import { useScroll } from "@/utils/hooks/useScroll";
+import { useTheme } from "@/utils/hooks/useTheme";
 import styles from "./HomePageLayout.module.scss";
 
 const cx = classNames.bind(styles);
 
 const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error, loading }) => {
-  const [theme, setTheme] = useState<string>(THEME.LIGHT);
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const { isScrollButtonVisible } = useScroll();
+  const { theme, switchTheme } = useTheme();
 
   const { jobs, skills, projects } = cmsApiResponse;
-
-  useEffect(() => {
-    const theme = localStorage.getItem("themeValue");
-    setTheme(theme === THEME.LIGHT || !theme ? THEME.LIGHT : THEME.DARK);
-  }, []);
-
-  const switchTheme = () => {
-    const newTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
-    localStorage.setItem("themeValue", newTheme);
-    setTheme(newTheme);
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

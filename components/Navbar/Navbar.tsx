@@ -36,8 +36,8 @@ const Navbar: NextPage<INavbarProps> = ({
           <Image
             src={theme === THEME.LIGHT ? "/assets/sun.webp" : "/assets/moon.webp"}
             alt="sun-moon-image"
-            width={40}
-            height={40}
+            width={45}
+            height={45}
             priority
             onClick={switchTheme}
           />
