@@ -38,7 +38,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
 
   const handleNavItemClick = (item: string) => {
     window.scrollTo({
-      top: SECTION.ABOUT ? 0 : sectionsRef.current[item.toLowerCase()]!.offsetTop - 70,
+      top: SECTION.ABOUT === item ? 0 : sectionsRef.current[item.toLowerCase()]!.offsetTop - 70,
       behavior: "smooth",
     });
   };
@@ -61,7 +61,12 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
     <div data-theme={theme} className={cx("home-page-layout")}>
       <Navbar theme={theme} onNavItemClick={handleNavItemClick} switchTheme={switchTheme} />
       <main>
-        <section className={cx("about-section")}>
+        <section
+          className={cx("about-section")}
+          ref={el => {
+            sectionsRef.current.about = el;
+          }}
+        >
           <AboutSection />
         </section>
         <section

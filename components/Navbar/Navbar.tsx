@@ -61,11 +61,21 @@ const Navbar: NextPage<INavbarProps> = ({
         </div>
       </nav>
       <div className={cx("sidebar", showSidebar && "active")}>
-        <p className={cx("sidebar-item")}>About</p>
-        <p className={cx("sidebar-item")}>Work</p>
-        <p className={cx("sidebar-item")}>Projects</p>
-        <p className={cx("sidebar-item")}>Skills</p>
-        <p className={cx("sidebar-item")}>Contact</p>
+        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.ABOUT)}>
+          About
+        </p>
+        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.JOBS)}>
+          Work
+        </p>
+        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.PROJECTS)}>
+          Projects
+        </p>
+        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.SKILLS)}>
+          Skills
+        </p>
+        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.CONTACT)}>
+          Contact
+        </p>
       </div>
     </>
   );
