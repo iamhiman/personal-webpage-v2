@@ -64,8 +64,8 @@ export interface ICmsApiResponse {
 
 export interface IHomePageLayoutProps {
   cmsApiResponse: ICmsApiResponse;
-  error: ApolloError | undefined;
-  loading: boolean | undefined;
+  cmsApiError: ApolloError | undefined;
+  CmsApiLoading: boolean | undefined;
 }
 
 export interface IProjectsSectionProps {

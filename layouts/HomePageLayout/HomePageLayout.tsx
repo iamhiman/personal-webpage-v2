@@ -3,7 +3,9 @@
 import React, { useRef } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
-import { Navbar } from "@/components";
+import { ToastContainer } from "react-toastify";
+import Image from "next/image";
+import { CircularLoader, Navbar } from "@/components";
 import {
   AboutSection,
   ContactSection,
@@ -14,14 +16,16 @@ import {
 } from "@/containers";
 import { SECTION } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
-import { ToastContainer } from "react-toastify";
-import Image from "next/image";
 import { useScroll, useTheme } from "@/utils/hooks";
 import styles from "./HomePageLayout.module.scss";
 
 const cx = classNames.bind(styles);
 
-const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error, loading }) => {
+const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
+  cmsApiResponse,
+  cmsApiError,
+  CmsApiLoading,
+}) => {
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const { isScrollButtonVisible } = useScroll();
   const { theme, switchTheme } = useTheme();
@@ -38,6 +42,20 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse, error,
       behavior: "smooth",
     });
   };
+
+  if (cmsApiError)
+    return (
+      <div data-theme={theme} className={cx("error-container")}>
+        OOPS...Our servers are a little overwhelmed. Give it a moment and try again.
+      </div>
+    );
+
+  if (CmsApiLoading)
+    return (
+      <div data-theme={theme} className={cx("loader-container")}>
+        <CircularLoader />
+      </div>
+    );
 
   return (
     <div data-theme={theme} className={cx("home-page-layout")}>

@@ -12,3 +12,23 @@
     cursor: pointer;
   }
 }
+
+.error-container {
+  @include colorWithBackground(var(--main-text-color), var(--background-one));
+  @include flexSettings(row, center, center);
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  padding: 0 24px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+.loader-container {
+  @include colorWithBackground(var(--main-text-color), var(--background-one));
+  @include flexSettings(row, center, center);
+  width: 100vw;
+  height: 100vh;
+  padding: 0 24px;
+}

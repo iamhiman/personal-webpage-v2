@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-// import { ToastContainer } from "react-toastify";
 import { HomePageLayout } from "@/layouts";
-import { apolloClient, GraphqlQuery } from "@/utils/lib/apolloClient";
+import { apolloClient, GraphqlQuery } from "@/utils/api/apolloClient";
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 10 seconds.
@@ -13,7 +12,7 @@ const Home: NextPage = async () => {
     fetchPolicy: "network-only", // Ensure fresh data for ISR
   });
 
-  return <HomePageLayout cmsApiResponse={data} error={error} loading={loading} />;
+  return <HomePageLayout cmsApiResponse={data} cmsApiError={error} CmsApiLoading={true} />;
 };
 
 export default Home;
