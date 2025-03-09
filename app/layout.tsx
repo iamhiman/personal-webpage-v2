@@ -1,5 +1,5 @@
-// import Script from "next/script";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "../styles/main.scss";
 
 export const metadata: Metadata = {
@@ -10,11 +10,25 @@ export const metadata: Metadata = {
   creator: "Himanshu Kashyap",
   publisher: "Himanshu Kashyap",
   keywords: [
+    "Himanshu Kashyap",
+    "Himanshu Kashyap portfolio",
+    "software developer",
+    "web developer",
+    "React developer",
+    "Next.js developer",
+    "full-stack developer",
+    "frontend engineer",
+    "JavaScript developer",
+    "Dehradun software developer",
+    "best portfolio websites",
+    "personal website for developers",
+    "programming blogs",
+    "tech blog",
+    "coding projects",
     "himan_kash",
     "himanshu",
     "kashyap",
     "himanshu kashyap",
-    "Himanshu Kashyap",
     "iamhiman",
     "lpu",
     "dehradun",
@@ -35,32 +49,25 @@ export const metadata: Metadata = {
     },
   },
   icons: { icon: "/favicon.ico" },
+  alternates: {
+    canonical: "https://www.himankash.com/",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className="">{children}</body>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      />
+      <Script id="google-analytics-script" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
+      </Script>
     </html>
   );
 }
-
-// const MyApp = ({ Component, pageProps }: AppProps) => {
-//   return (
-//     <>
-//       <Script
-//         strategy="afterInteractive"
-//         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-//       />
-//       <Script id="google-analytics-script" strategy="afterInteractive">
-//         {`window.dataLayer = window.dataLayer || [];
-//            function gtag(){dataLayer.push(arguments);}
-//            gtag('js', new Date());
-//            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
-//       </Script>
-//       <Component {...pageProps} />
-//     </>
-//   );
-// };
-
-// export default MyApp;
