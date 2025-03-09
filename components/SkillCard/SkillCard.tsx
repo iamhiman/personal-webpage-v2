@@ -18,7 +18,7 @@ const SkillCard: NextPage<ISkillCardProps> = ({ skills, skillName }) => {
             className={cx("skill-card-container-item")}
             onClick={() => window.open(skill?.url, "_blank")}
           >
-            <Image src={skill?.image?.url} alt="skill-url" width={200} height={120} priority />
+            <Image src={skill?.image?.url} alt="skill-url" width={50} height={50} priority />
             <p>{skill?.skill}</p>
           </div>
         ))}
