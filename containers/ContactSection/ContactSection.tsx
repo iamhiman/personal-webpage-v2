@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import Image from "next/image";
-import { ContactForm } from "@/components";
+import { CircularLoader, ContactForm } from "@/components";
 import { useForm } from "@/utils/hooks";
 import styles from "./ContactSection.module.scss";
 
@@ -21,7 +21,9 @@ const ContactSection: NextPage = () => {
       {isFormSubmitting ? (
         <div className={cx("contact-submission")}>
           <div className={cx("contact-submission-head")}>Submitting Form Details</div>
-          {/* <ThreeDots ariaLabel="loading-indicator" color={theme === THEME.LIGHT ? "#343e47" : "#ffffff"} /> */}
+          <div className={cx("contact-submission-loader")}>
+            <CircularLoader />
+          </div>
           <div className={cx("contact-submission-text")}>Please wait...</div>
         </div>
       ) : (

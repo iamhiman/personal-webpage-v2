@@ -27,12 +27,17 @@
     color: var(--main-text-color);
     flex-wrap: wrap;
     max-width: 500px;
-    margin: 150px auto 100px auto;
+    margin: 80px auto 80px auto;
     padding: 0 20px;
     text-align: center;
 
     &-head {
       font-size: 22px;
+    }
+
+    &-loader {
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     &-text {

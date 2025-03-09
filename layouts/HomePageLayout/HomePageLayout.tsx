@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import { CircularLoader, Navbar } from "@/components";
 import {
@@ -109,14 +109,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
           onClick={scrollToTop}
         />
       )}
-      <ToastContainer
-        position="top-right"
-        autoClose={3500}
-        hideProgressBar={false}
-        closeOnClick={true}
-        pauseOnFocusLoss={false}
-        pauseOnHover={false}
-      />
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 // import Script from "next/script";
 import type { Metadata } from "next";
-import "react-toastify/dist/ReactToastify.css";
 import "../styles/main.scss";
 
 export const metadata: Metadata = {

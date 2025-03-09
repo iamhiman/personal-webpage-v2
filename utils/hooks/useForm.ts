@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { IFormData } from "@/utils/typings/typings";
 
 export const useForm = () => {

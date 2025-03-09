@@ -12,7 +12,7 @@ const Home: NextPage = async () => {
     fetchPolicy: "network-only", // Ensure fresh data for ISR
   });
 
-  return <HomePageLayout cmsApiResponse={data} cmsApiError={error} CmsApiLoading={true} />;
+  return <HomePageLayout cmsApiResponse={data} cmsApiError={error} CmsApiLoading={loading} />;
 };
 
 export default Home;
