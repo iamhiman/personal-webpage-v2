@@ -1,0 +1,174 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.navbar {
+  @include flexSettings(row, space-between, center);
+  @include colorWithBackground(#9c27b0, var(--background-one));
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-one);
+
+  .menu {
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    left: 25px;
+    z-index: 100;
+    display: none;
+
+    .line {
+      position: absolute;
+      background-color: #9c27b0;
+      border-radius: 4px;
+      transition: 1s all ease-in-out;
+      width: 35px;
+      height: 4px;
+    }
+
+    .line-1 {
+      @include lineTransform(0, none);
+    }
+
+    .line-2 {
+      @include lineTransform(50%, translateY(-50%));
+    }
+
+    .line-3 {
+      @include lineTransform(100%, translateY(-100%));
+    }
+
+    .line1 {
+      @include lineTransform(0, none);
+    }
+
+    .line2 {
+      @include lineTransform(50%, translateY(-50%));
+    }
+
+    .line3 {
+      @include lineTransform(100%, translateY(-100%));
+    }
+
+    .checked {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      cursor: pointer;
+      width: 35px;
+      height: 25px;
+    }
+
+    .checked:checked ~ .line-1 {
+      @include lineTransform(50%, translate(0, -50%) rotate(45deg));
+    }
+
+    .checked:checked ~ .line-2 {
+      width: 0;
+      opacity: 0;
+    }
+
+    .checked:checked ~ .line-3 {
+      @include lineTransform(50%, translate(0, -50%) rotate(-45deg));
+    }
+  }
+
+  &-name {
+    @include flexSettings(row, center, center);
+    flex: 0 0 25%;
+    font-size: 22px;
+    margin-left: 20px;
+
+    span {
+      margin-right: 20px;
+    }
+
+    img {
+      @include imageSize(45px, 45px, contain);
+      @include borderWithRadius(2px solid #9c27b0, 50%);
+      padding: 6px;
+      cursor: pointer;
+    }
+  }
+
+  &-list {
+    @include flexSettings(row, center, center);
+    flex: 0 0 35%;
+    margin-right: 15px;
+
+    &-item {
+      margin-right: 15px;
+      font-size: 17px;
+      padding: 8px 14px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.7s ease-in-out;
+    }
+
+    &-item:hover {
+      @include colorWithBackground(#ffffff, #9c27b0);
+      box-shadow: 0 2px 10px #9c27b0;
+    }
+  }
+}
+
+.sidebar {
+  @include sectionLayout(20px, var(--background-one));
+  display: none;
+  height: calc(100vh - 80px);
+  width: 250px;
+  border-right: 2px solid var(--border-one);
+  position: fixed;
+  top: 80px;
+  left: -100%;
+  z-index: 1000;
+  padding: 20px;
+  transition: 1.5s;
+
+  &-item {
+    @include headingLayout(18px, center, 25px, #9c27b0);
+    padding: 8px 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    margin-top: 25px;
+    width: 200px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &-item:hover {
+    @include colorWithBackground(#ffffff, #9c27b0);
+    box-shadow: 0 2px 10px #9c27b0;
+  }
+}
+
+.active {
+  left: 0;
+  transition: all 1s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    .menu {
+      display: block;
+    }
+
+    &-name {
+      flex-basis: 0;
+      position: absolute;
+      right: 25px;
+    }
+    &-list {
+      display: none;
+    }
+  }
+
+  .sidebar {
+    display: block;
+  }
+}

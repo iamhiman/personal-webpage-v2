@@ -1,0 +1,47 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.contact {
+  @include sectionLayout(40px 25px, var(--background-two));
+
+  &-heading {
+    @include headingLayout(42px, center, 50px, var(--main-text-color));
+  }
+
+  &-email {
+    @include flexSettings(row, center, center);
+    @include sectionLayout(15px, var(--secondary-background-one));
+    max-width: 400px;
+    margin: auto auto 30px auto;
+    border-radius: 8px;
+    word-break: break-all;
+    color: #9c27b0;
+
+    img {
+      @include imageSize(30px, 30px, contain);
+      margin-right: 15px;
+    }
+  }
+
+  &-submission {
+    @include flexSettings(column, center, center);
+    color: var(--main-text-color);
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 80px auto 80px auto;
+    padding: 0 20px;
+    text-align: center;
+
+    &-head {
+      font-size: 22px;
+    }
+
+    &-loader {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    &-text {
+      font-size: 18px;
+    }
+  }
+}

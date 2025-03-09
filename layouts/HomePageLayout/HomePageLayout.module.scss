@@ -1,0 +1,34 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.home-page-layout {
+  .scroll-up {
+    @include imageSize(40px, 40px, contain);
+    @include borderWithRadius(2px solid #9c27b0, 50%);
+    padding: 8px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+}
+
+.error-container {
+  @include colorWithBackground(var(--main-text-color), var(--background-one));
+  @include flexSettings(row, center, center);
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+  padding: 0 24px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+.loader-container {
+  @include colorWithBackground(var(--main-text-color), var(--background-one));
+  @include flexSettings(row, center, center);
+  width: 100vw;
+  height: 100vh;
+  padding: 0 24px;
+}

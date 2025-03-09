@@ -1,0 +1,25 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.jobs {
+  @include sectionLayout(40px 25px, var(--background-one));
+
+  &-heading {
+    @include headingLayout(42px, center, 20px, var(--main-text-color));
+  }
+
+  &-timeline-container {
+    max-width: 500px;
+    margin: 0 auto;
+    border-left: 3px solid var(--main-text-color);
+    padding-left: 32px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .jobs {
+    &-timeline-container {
+      max-width: 100%;
+      margin-left: 8px;
+    }
+  }
+}
