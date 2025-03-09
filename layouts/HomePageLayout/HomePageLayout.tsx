@@ -4,7 +4,14 @@ import React, { useEffect, useRef, useState } from "react";
 import type { NextPage } from "next";
 import classNames from "classnames/bind";
 import { Navbar, Sidebar } from "@/components";
-import { AboutSection, ContactSection, FooterSection, JobsSection, ProjectsSection, SkillsSection } from "@/containers";
+import {
+  AboutSection,
+  ContactSection,
+  FooterSection,
+  JobsSection,
+  ProjectsSection,
+  SkillsSection,
+} from "@/containers";
 import { SECTION, THEME } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import { ToastContainer } from "react-toastify";

@@ -21,7 +21,9 @@ const ProjectsSection: NextPage<IProjectsSectionProps> = ({ projects }) => {
     }
 
     const filtered = projects?.filter(project =>
-      project?.techStack?.some(tech => tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase())),
+      project?.techStack?.some(tech =>
+        tech?.text?.toLowerCase()?.includes(activeTag?.toLowerCase()),
+      ),
     );
 
     setFilteredProjects(filtered);

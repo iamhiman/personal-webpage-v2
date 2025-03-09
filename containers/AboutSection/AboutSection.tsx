@@ -14,10 +14,11 @@ const AboutSection: NextPage = () => {
       <div className={cx("about-left")}>
         <h1 className={cx("about-left-head")}>Hi, I&apos;m Himanshu Kashyap</h1>
         <p className={cx("about-left-text")}>
-          I am a Software Engineer (Fullstack) from Dehradun, Uttarakhand - India. I am experienced in writing scalable
-          code & building fault-tolerant systems from scratch. I have done my graduation in Computer Science Engineering
-          with minors in Cyber Security. I am passionate about writing clean, efficient and optimized code. I wrote my
-          First Program in C++ in 2012.
+          I am a Software Engineer (Fullstack) from Dehradun, Uttarakhand - India. I am experienced
+          in writing scalable code & building fault-tolerant systems from scratch. I have done my
+          graduation in Computer Science Engineering with minors in Cyber Security. I am passionate
+          about writing clean, efficient and optimized code. I wrote my First Program in C++ in
+          2012.
         </p>
         <div className={cx("about-left-socialMedia")}>
           <Image

@@ -14,8 +14,14 @@ const SkillsSection: NextPage<ISkillsSectionProps> = ({ skills }) => {
   const { filteredSkill: frontend } = useFilteredSkills(skills, SKILLSET.FRONTEND);
   const { filteredSkill: uilibraries } = useFilteredSkills(skills, SKILLSET.UI_LIBRARIES);
   const { filteredSkill: headlessCms } = useFilteredSkills(skills, SKILLSET.HEADLESS_CMS);
-  const { filteredSkill: backend } = useFilteredSkills(skills, [SKILLSET.BACKEND, SKILLSET.DATABASE]);
-  const { filteredSkill: testing_tools } = useFilteredSkills(skills, [SKILLSET.TESTING, SKILLSET.TOOLS]);
+  const { filteredSkill: backend } = useFilteredSkills(skills, [
+    SKILLSET.BACKEND,
+    SKILLSET.DATABASE,
+  ]);
+  const { filteredSkill: testing_tools } = useFilteredSkills(skills, [
+    SKILLSET.TESTING,
+    SKILLSET.TOOLS,
+  ]);
   const { filteredSkill: familiar } = useFilteredSkills(skills);
 
   return (

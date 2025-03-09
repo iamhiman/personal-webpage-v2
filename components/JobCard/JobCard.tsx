@@ -28,7 +28,9 @@ const JobCard: NextPage<IJobCardProps> = ({ job }) => {
       </div>
       <div className={cx("job-card-date")}>
         {`${Months[parseInt(job?.from?.split("-")[1])]}, ${job?.from?.split("-")[0]}`} -{" "}
-        {job?.to ? `${Months[parseInt(job?.to?.split("-")[1])]}, ${job?.to?.split("-")[0]}` : "Present"}
+        {job?.to
+          ? `${Months[parseInt(job?.to?.split("-")[1])]}, ${job?.to?.split("-")[0]}`
+          : "Present"}
       </div>
       <div className={cx("job-card-company-links")}>
         {job?.companyLinkedin && (

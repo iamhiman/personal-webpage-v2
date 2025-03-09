@@ -9,7 +9,11 @@ import styles from "./Navbar.module.scss";
 
 const cx = classNames.bind(styles);
 
-const Navbar: NextPage<INavbarProps> = ({ onNavItemClick = () => {}, switchTheme = () => {}, theme }) => {
+const Navbar: NextPage<INavbarProps> = ({
+  onNavItemClick = () => {},
+  switchTheme = () => {},
+  theme,
+}) => {
   return (
     <nav className={cx("navbar")}>
       <p className={cx("navbar-name")}>

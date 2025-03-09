@@ -11,7 +11,9 @@ const JobsSection: NextPage<IJobsSectionProps> = ({ jobs }) => {
   return (
     <div className={cx("jobs")}>
       <h1 className={cx("jobs-heading")}>Work Experience</h1>
-      <div className={cx("jobs-timeline-container")}>{jobs?.map(job => <JobCard key={job?.id} job={job} />)}</div>
+      <div className={cx("jobs-timeline-container")}>
+        {jobs?.map(job => <JobCard key={job?.id} job={job} />)}
+      </div>
     </div>
   );
 };
