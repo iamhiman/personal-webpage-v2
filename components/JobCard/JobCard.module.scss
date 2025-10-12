@@ -1,6 +1,6 @@
 @use "../../styles/commonStylesMixins.scss" as *;
 
-.job-card {
+.jobCard {
   @include sectionLayout(25px 20px, var(--jobs-jobcard-background));
   box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.2);
   margin: 48px 0;
@@ -19,14 +19,14 @@
     font-size: 16px;
   }
 
-  &-company-logo {
+  .companyLogo {
     @include imageSize(90px, 40px, contain);
     position: absolute;
     right: 10px;
     top: 30px;
   }
 
-  &-timeline {
+  .timeline {
     position: absolute;
     left: -125px;
     top: 50%;
@@ -34,7 +34,7 @@
     font-weight: bold;
   }
 
-  &-company-links {
+  .companyLinks {
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -61,24 +61,24 @@
 
   &:hover {
     box-shadow: 0 2px 10px #9c27b0;
-  }
 
-  &:hover::before {
-    background: #9c27b0;
+    &::before {
+      background: #9c27b0;
+    }
   }
 }
 
 @media only screen and (max-width: 720px) {
-  .job-card {
-    &-timeline {
+  .jobCard {
+    .timeline {
       display: none;
     }
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .job-card {
-    &-company-links {
+  .jobCard {
+    .companyLinks {
       position: static;
       margin-top: 10px;
     }

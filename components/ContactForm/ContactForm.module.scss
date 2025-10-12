@@ -1,25 +1,25 @@
 @use "../../styles/commonStylesMixins.scss" as *;
 
-.contact-form {
+.contactForm {
   @include flexSettings(column, center, center);
   flex-wrap: wrap;
   max-width: 500px;
   margin: auto;
   padding: 0 20px;
 
-  &-formcontrol {
+  .formControl {
     @include flexSettings(column, center, center);
     margin-top: 25px;
     width: 100%;
 
-    &-label {
+    .label {
       margin-bottom: 5px;
       font-size: 18px;
       align-self: flex-start;
       color: var(--text-color-two);
     }
 
-    &-input {
+    .input {
       @include sectionLayout(12px, var(--secondary-background-one));
       @include borderWithRadius(1px solid #6b7688, 8px);
       width: 100%;
@@ -30,14 +30,14 @@
       resize: none;
     }
 
-    &-error {
+    .error {
       font-size: 14px;
       font-weight: 500;
       color: red;
       align-self: flex-start;
     }
 
-    &-submit {
+    .submit {
       @include sectionLayout(10px 30px, #9c27b0);
       @include borderWithRadius(none, 10px);
       text-align: center;
@@ -46,10 +46,10 @@
       font-size: 18px;
       cursor: pointer;
       max-width: 120px;
-    }
 
-    &-submit:hover {
-      background-color: #871d9a;
+      &:hover {
+        background-color: #871d9a;
+      }
     }
   }
 }

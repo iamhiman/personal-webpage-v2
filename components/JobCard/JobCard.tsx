@@ -1,16 +1,13 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import classNames from "classnames/bind";
 import { Months } from "@/utils/constants/constants";
 import { IJobCardProps } from "@/utils/typings/typings";
 import styles from "./JobCard.module.scss";
 
-const cx = classNames.bind(styles);
-
 const JobCard: NextPage<IJobCardProps> = ({ job }) => {
   return (
-    <div className={cx("job-card")} key={job?.id}>
+    <div className={styles.jobCard} key={job?.id}>
       <h2>{job?.company}</h2>
       <h3>{job?.designation}</h3>
       {job?.logo?.url && (
@@ -19,20 +16,20 @@ const JobCard: NextPage<IJobCardProps> = ({ job }) => {
           alt="company-logo"
           width={90}
           height={40}
-          className={cx("job-card-company-logo")}
+          className={styles.companyLogo}
           priority
         />
       )}
-      <div className={cx("job-card-timeline")}>
+      <div className={styles.timeline}>
         {`${Months[parseInt(job?.from?.split("-")[1])]}, ${job?.from?.split("-")[0]}`}
       </div>
-      <div className={cx("job-card-date")}>
+      <div>
         {`${Months[parseInt(job?.from?.split("-")[1])]}, ${job?.from?.split("-")[0]}`} -{" "}
         {job?.to
           ? `${Months[parseInt(job?.to?.split("-")[1])]}, ${job?.to?.split("-")[0]}`
           : "Present"}
       </div>
-      <div className={cx("job-card-company-links")}>
+      <div className={styles.companyLinks}>
         {job?.companyLinkedin && (
           <Image
             src="/assets/linkedin.webp"
